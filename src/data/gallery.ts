@@ -90,7 +90,6 @@ export const galleryPhotos: Photo[] = [
   { id: 'IMG_2951', src: '/IMG_2951.jpg', alt: 'IMG_2951', dataAiHint: 'foto boda', height: 800 },
   { id: 'IMG_2975', src: '/IMG_2975.jpg', alt: 'IMG_2975', dataAiHint: 'foto boda', height: 800 },
   { id: 'IMG_9165', src: '/IMG_9165.jpg', alt: 'IMG_9165', dataAiHint: 'foto boda', height: 800 },
-  { id: 'IMG_9202', src: '/IMG_9202.jpg', alt: 'IMG_9202', dataAiHint: 'foto boda', height: 800 },
   { id: 'IMG_9225', src: '/IMG_9225.jpg', alt: 'IMG_9225', dataAiHint: 'foto boda', height: 800 },
   { id: 'IMG_9227', src: '/IMG_9227.jpg', alt: 'IMG_9227', dataAiHint: 'foto boda', height: 800 },
   { id: 'IMG_9416', src: '/IMG_9416.jpg', alt: 'IMG_9416', dataAiHint: 'foto boda', height: 800 },
