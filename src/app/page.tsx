@@ -144,7 +144,7 @@ export default function HomePage() {
                 {
                   img: "_DMA6873.jpg",
                   couple: "Lola & Marcos",
-                  description: "Lola y Marcos se dieron el ‘sí’ rodeados de olivos y de toda la energía de su gente. Fue una boda que mezcló lo tradicional con un toque actual, llena de risas desde los preparativos hasta el último baile bajo las estrellas."
+                  description: "Lola y Marcos se dieron el 'sí' bajo un paisaje nevado. El contraste entre el frío y el amor de su gente nos regaló fotografías únicas. Una boda de invierno que fue pura magia, risas y baile."
                 },
                 {
                   img: "_DMA1102.jpg",
@@ -171,11 +171,6 @@ export default function HomePage() {
                     {story.couple}
                   </h3>
                   <p className="text-foreground/70 mb-4 max-w-md mx-auto">{story.description}</p>
-                  <Button asChild variant="link" className="text-primary">
-                    <Link href="/gallery">
-                      Ver la historia completa <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
                 </div>
               ))}
             </div>
