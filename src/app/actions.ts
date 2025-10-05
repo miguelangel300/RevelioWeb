@@ -29,28 +29,57 @@ export async function handleBookingInquiry(data: BookingInquiryData) {
 
   console.log('Iniciando envío de email...');
   
-  // Verificar que tenemos la contraseña
-  if (!process.env.GMAIL_APP_PASSWORD) {
-    console.error('No se encontró la variable de entorno GMAIL_APP_PASSWORD');
+  // Verificar que tenemos la contraseña (aceptamos SMTP_PASS o GMAIL_APP_PASSWORD)
+  const availablePassword = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD;
+  if (!availablePassword) {
+    console.error('No se encontró la variable de entorno SMTP_PASS ni GMAIL_APP_PASSWORD');
     return {
       success: false,
-      message: "Error de configuración del servidor",
+      message: "Error de configuración del servidor: falta la contraseña SMTP",
     };
   }
   
-  // Configuración del transporte SMTP usando Gmail
-  const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      user: 'alex.montalvo.carrasco@gmail.com',
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
-    debug: true,
-    logger: true
-  });
-  
+  // Configuración del transporte SMTP configurable.
+  // Preferimos usar variables de entorno del hosting (p.ej. PiensaSolutions):
+  // SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, MAIL_FROM
+  // Si no se proporcionan, usamos la configuración temporal de Gmail.
+
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined;
+  const smtpSecure = process.env.SMTP_SECURE ? process.env.SMTP_SECURE === 'true' : undefined;
+  const smtpUser = process.env.SMTP_USER || process.env.GMAIL_SMTP_USER || 'alex.montalvo.carrasco@gmail.com';
+  const smtpPass = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD;
+
+  let transporter;
+
+  if (smtpHost) {
+    console.log('Usando transporte SMTP desde variables de entorno (SMTP_HOST detectado)');
+    transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort ?? 465,
+      secure: smtpSecure ?? true,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+      debug: true,
+      logger: true,
+    });
+  } else {
+    console.log('No se detectó SMTP_HOST — usando configuración temporal de Gmail. Es recomendable configurar SMTP_HOST para enviar desde info@reveliophotography.es');
+    transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+      debug: true,
+      logger: true,
+    });
+  }
+
   console.log('Transporter configurado');
 
   // Construir el mensaje
@@ -74,12 +103,19 @@ ${userMessage}
 Enviado desde el formulario de contacto de reveliophotography.es
 `;
 
+  // Determine the 'from' address. Prefer MAIL_FROM (ej. info@reveliophotography.es)
+  const mailFromAddress = process.env.MAIL_FROM || smtpUser || 'alex.montalvo.carrasco@gmail.com';
+
   const mailOptions = {
     from: {
       name: 'Formulario Revelio Photography',
-      address: 'alex.montalvo.carrasco@gmail.com'
+      address: mailFromAddress
     },
-    to: ['info@reveliophotography.es', 'alex.montalvo.carrasco@gmail.com', 'elia499@hotmail.com'],
+    // Primary recipient should be the official info address. Other internal recipients
+    // are moved to BCC so that delivery to the main inbox is prioritized and
+    // the email headers do not confuse some spam filters or providers.
+    to: 'info@reveliophotography.es',
+    bcc: ['alex.montalvo.carrasco@gmail.com', 'elia499@hotmail.com'],
     subject: `Nueva consulta de boda de ${clientName}`,
     replyTo: email,
     headers: {
@@ -112,6 +148,21 @@ Enviado desde el formulario de contacto de reveliophotography.es
       accepted: info.accepted,
       rejected: info.rejected
     });
+
+    // Extra debug: log whether the main info address was accepted or rejected
+    try {
+      const accepted: string[] = info.accepted || [];
+      const rejected: string[] = info.rejected || [];
+      if (accepted.includes('info@reveliophotography.es')) {
+        console.log('La dirección info@reveliophotography.es fue ACCEPTED por el servidor SMTP');
+      } else if (rejected.includes('info@reveliophotography.es')) {
+        console.warn('La dirección info@reveliophotography.es fue REJECTED por el servidor SMTP');
+      } else {
+        console.log('No hay confirmación explícita de aceptación/rechazo para info@reveliophotography.es (puede depender del proveedor)');
+      }
+    } catch (err) {
+      console.error('Error al procesar accepted/rejected:', err);
+    }
     
     return {
       success: true,
