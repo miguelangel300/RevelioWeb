@@ -4,7 +4,7 @@
 Este es un proyecto de NextJS para un fotógrafo de bodas, con un enfoque artístico y minimalista.
 
 ## Realizado por
-Alejandro
+Alejandro y colaborador Migue
 
 ## Primeros Pasos
 
