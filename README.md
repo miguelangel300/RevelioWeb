@@ -8,6 +8,7 @@ Alejandro y en colaboracion con Miguel Angel
 
 ## Primeros Pasos
 
+
 Para comenzar, echa un vistazo a `src/app/page.tsx` para ver la página principal.
 
 ## Estructura y Personalización
