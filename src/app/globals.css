@@ -4,65 +4,65 @@
 
 @layer base {
   :root {
-    --background: 39 78% 87%; /* #f7e5c5 */
-    --foreground: 35 25% 15%; /* Darker Warm Gray for contrast */
+    --background: 39 78% 87%; /* #f7e5c5 - Crema cálido (Fondo principal) */
+    --foreground: 35 25% 15%; /* Gris cálido oscuro para buen contraste (Texto) */
 
-    --card: 39 78% 87%; /* #f7e5c5 */
-    --card-foreground: 35 25% 15%; /* Darker Warm Gray */
+    --card: 39 78% 87%; /* #f7e5c5 - Fondo de las tarjetas */
+    --card-foreground: 35 25% 15%; /* Texto de las tarjetas */
 
-    --popover: 39 78% 87%; /* #f7e5c5 */
-    --popover-foreground: 35 25% 15%; /* Darker Warm Gray */
+    --popover: 39 78% 87%; /* #f7e5c5 - Fondo de menús flotantes */
+    --popover-foreground: 35 25% 15%; /* Texto de menús flotantes */
 
-    --primary: 354 44% 21%; /* #4c1e22 */
-    --primary-foreground: 40 60% 96%; /* Very Light Cream/Off-white for text on Wine */
+    --primary: 354 44% 21%; /* #4c1e22 - Color principal (Vino Tinto) */
+    --primary-foreground: 40 60% 96%; /* Crema muy claro para texto encima del color vino */
 
-    --secondary: 354 20% 65%; /* Muted version of primary */
-    --secondary-foreground: 354 80% 15%; /* Darker Wine for text on Muted secondary */
+    --secondary: 354 20% 65%; /* Versión apagada del color principal */
+    --secondary-foreground: 354 80% 15%; /* Vino oscuro para texto sobre el secundario */
 
-    --muted: 39 60% 92%; /* Lighter version of background */
-    --muted-foreground: 35 20% 40%; /* Medium Warm Gray for muted text */
+    --muted: 39 60% 92%; /* Versión más clara del fondo */
+    --muted-foreground: 35 20% 40%; /* Gris medio cálido para texto apagado / subtítulos */
 
-    --accent: 354 30% 70%; /* Accent color derived from primary */
-    --accent-foreground: 354 44% 21%; /* #4c1e22 */
+    --accent: 354 30% 70%; /* Color de acento derivado del principal */
+    --accent-foreground: 354 44% 21%; /* #4c1e22 - Color principal (Vino Tinto) */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%; /* Rojo para acciones destructivas / borrar */
+    --destructive-foreground: 0 0% 98%; /* Texto sobre botones destructivos */
 
-    --border: 39 50% 80%; /* Soft border derived from background */
-    --input: 39 60% 92%; /* Light input background */
-    --ring: 354 44% 21%; /* #4c1e22 for focus rings */
+    --border: 39 50% 80%; /* Borde suave derivado del fondo */
+    --input: 39 60% 92%; /* Fondo para campos de texto (inputs) */
+    --ring: 354 44% 21%; /* #4c1e22 - Color de enfoque/glow alrededor de inputs (Vino Tinto) */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 35 25% 15%;
-    --foreground: 39 78% 87%;
+    --background: 35 25% 15%; /* Fondo principal del modo oscuro (Gris súper oscuro casi negro) */
+    --foreground: 39 78% 87%; /* Texto principal sobre fondo oscuro (Crema claro) */
 
-    --card: 35 25% 15%;
-    --card-foreground: 39 78% 87%;
+    --card: 35 25% 15%; /* Fondo de las tarjetas en modo oscuro */
+    --card-foreground: 39 78% 87%; /* Texto dentro de las tarjetas */
 
-    --popover: 35 25% 15%;
-    --popover-foreground: 39 78% 87%;
+    --popover: 35 25% 15%; /* Fondo de menús flotantes en modo oscuro */
+    --popover-foreground: 39 78% 87%; /* Texto de menús flotantes */
 
-    --primary: 354 40% 35%;
-    --primary-foreground: 39 78% 87%;
+    --primary: 354 40% 35%; /* Color principal para resaltar botones/links (Vino más claro para que contraste en negro) */
+    --primary-foreground: 39 78% 87%; /* Texto dentro de botones primarios */
 
-    --secondary: 354 20% 25%;
-    --secondary-foreground: 39 78% 87%;
+    --secondary: 354 20% 25%; /* Versión secundaria/muted del color principal */
+    --secondary-foreground: 39 78% 87%; /* Texto sobre color secundario */
 
-    --muted: 35 25% 22%;
-    --muted-foreground: 39 60% 75%;
+    --muted: 35 25% 22%; /* Fondo para elementos secundarios o inactivos */
+    --muted-foreground: 39 60% 75%; /* Texto gris atenuado para no destacar tanto */
 
-    --accent: 354 30% 30%;
-    --accent-foreground: 39 78% 87%;
+    --accent: 354 30% 30%; /* Color de acento para menús desplegables / hover effects */
+    --accent-foreground: 39 78% 87%; /* Texto sobre elementos de acento */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%; /* Rojo intenso y oscuro para acciones destructivas */
+    --destructive-foreground: 0 0% 98%; /* Texto blanco sobre botones de borrar */
 
-    --border: 35 25% 25%;
-    --input: 35 25% 22%;
-    --ring: 354 40% 35%;
+    --border: 35 25% 25%; /* Color sutil para líneas divisorias y bordes */
+    --input: 35 25% 22%; /* Fondo de campos de formulario (inputs) en oscuro */
+    --ring: 354 40% 35%; /* Color de glow / enfoque alrededor de inputs activos */
   }
 }
 

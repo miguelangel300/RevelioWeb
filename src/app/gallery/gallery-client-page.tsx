@@ -7,6 +7,7 @@ import { Masonry } from 'masonic';
 import { useWindowSize } from '@/hooks/use-window-size';
 import type { Photo } from '@/types';
 import { AnimatePresence, motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
 
 import {
   Dialog,
@@ -20,15 +21,15 @@ const PhotoCard = ({ data: photo }: { data: Photo }) => {
 
   return (
     <>
-      <div 
-        className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer" 
+      <div
+        className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer"
         onClick={() => setIsOpen(true)}
       >
         <Image
           src={photo.src}
           alt={photo.alt}
           width={350}
-          height={photo.height ? Math.round(photo.height * (350/500)) : 525}
+          height={photo.height ? Math.round(photo.height * (350 / 500)) : 525}
           className="w-full h-auto"
           data-ai-hint={photo.dataAiHint}
           loading="lazy"
@@ -36,7 +37,12 @@ const PhotoCard = ({ data: photo }: { data: Photo }) => {
           blurDataURL="/favicon.svg"
           quality={90}
         />
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-foreground/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            <p className="text-primary-foreground font-serif text-2xl italic mb-1">{photo.title || 'Historia'}</p>
+            <span className="text-xs text-primary-foreground/80 uppercase tracking-widest">{photo.category || 'Bodas'}</span>
+          </div>
+        </div>
       </div>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -63,6 +69,9 @@ const PhotoCard = ({ data: photo }: { data: Photo }) => {
 
 export default function GalleryClientPage() {
   const [isClient, setIsClient] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<string>('Todo');
+
+  const categories = ['Todo', 'Bodas', 'Retratos', 'Detalles', 'Editorial'];
 
   useEffect(() => {
     setIsClient(true);
@@ -71,13 +80,35 @@ export default function GalleryClientPage() {
   const { width } = useWindowSize();
   const columnCount = width ? (width < 640 ? 2 : width < 1024 ? 3 : 4) : 3;
 
+  const filteredPhotos = activeCategory === 'Todo'
+    ? galleryPhotos
+    : galleryPhotos.filter(photo => photo.category === activeCategory);
+
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
       <section className="text-center mb-12">
         <h1 className="text-5xl font-serif font-semibold text-primary mb-4">Galería de Historias</h1>
-        <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-          Un viaje visual a través de las emociones y la magia de las bodas.
+        <p className="text-lg text-foreground/80 max-w-3xl mx-auto italic">
+          "Capturando momentos efímeros, creando recuerdos eternos."
         </p>
+
+        {/* Filters */}
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={cn(
+                "px-6 py-2 rounded-full border transition-all text-sm tracking-widest uppercase",
+                activeCategory === cat
+                  ? "border-primary bg-primary text-primary-foreground hover:bg-primary/90"
+                  : "border-border text-muted-foreground hover:border-primary hover:text-primary bg-transparent"
+              )}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </section>
 
       <AnimatePresence mode="wait">
@@ -90,8 +121,8 @@ export default function GalleryClientPage() {
         >
           {isClient ? (
             <Masonry
-              items={galleryPhotos}
-              columnGutter={8}
+              items={filteredPhotos}
+              columnGutter={24}
               columnCount={columnCount}
               render={PhotoCard}
             />
