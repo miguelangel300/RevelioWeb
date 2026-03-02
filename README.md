@@ -60,6 +60,17 @@ Para mantener la página web rápida y posicionar bien en Google, las fotos pesa
 4. El script procesará todas las fotos y creará copias ultra-ligeras (redimensionadas y comprimidas) directamente dentro de la carpeta `/public` con el mismo nombre.
 5. Usa los nombres de esas fotos en el archivo `src/data/gallery.ts` como siempre. ¡Tu web cargará súper rápido!
 
+### 6. Clasificador Rápido de Fotografías (Herramienta de Admin)
+
+Para evitar tener que clasificar y titular a mano docenas de fotografías de la galería una por una en código, se ha creado una pequeña herramienta privada de administración visual.
+
+**Cómo usarla:**
+
+1. Arranca tu servidor de desarrollo con `npm run dev`.
+2. Ve en tu navegador a [http://localhost:9002/admin/gallery](http://localhost:9002/admin/gallery).
+3. Verás la primera foto junto con botones para asignarle rápidamente una **Categoría** y un campo para escribir su **Título** (ej: "El Sí quiero").
+4. Haz clic en "Guardar y Siguiente Foto". La foto pasará automáticamente y el archivo `src/data/gallery.ts` se modificará en tu código ¡al instante!
+
 ## Desarrollo
 
 ### Ejecutar el servidor de desarrollo:

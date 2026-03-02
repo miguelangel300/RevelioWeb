@@ -15,9 +15,9 @@ import { useState } from 'react';
 
 // --- CONFIGURACIÓN DEL CARRUSEL PRINCIPAL ---
 const heroSlides = [
-  { src: '/carrusel2.jpg', alt: 'Foto de boda 1', dataAiHint: 'foto boda' },
-  { src: '/_DMA1946.jpg', alt: 'Foto de boda 2', dataAiHint: 'foto boda' },
-  { src: '/carrusel12.jpg', alt: 'Foto de boda 3', dataAiHint: 'foto boda' },
+  { src: '/IMG_8687.jpg', alt: 'Foto de boda de alta calidad 1', dataAiHint: 'foto boda' },
+  { src: '/IMG_3153.jpg', alt: 'Foto de boda de alta calidad 2', dataAiHint: 'foto boda' },
+  { src: '/_DMA7595.jpg', alt: 'Foto de boda de alta calidad 3', dataAiHint: 'foto boda' },
 ];
 
 

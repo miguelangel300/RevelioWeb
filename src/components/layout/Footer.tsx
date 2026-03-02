@@ -1,4 +1,17 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
+
+const Logo = ({ className }: { className?: string }) => (
+  <Image
+    src="/logoRevelio completo sin fondo.png"
+    alt="Logo Revelio"
+    width={160}
+    height={53}
+    className={cn("h-14 w-auto", className)}
+    priority
+  />
+);
 
 const CustomInstagramIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -19,10 +32,10 @@ export default function Footer() {
     <footer className="bg-background py-12 border-t border-border mt-auto">
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
 
-        <div className="text-center md:text-left">
-          <span className="font-serif text-2xl font-bold text-primary tracking-widest uppercase block mb-2">
-            Revelio
-          </span>
+        <div className="text-center md:text-left flex flex-col items-center md:items-start">
+          <Link href="/" className="mb-2 block">
+            <Logo />
+          </Link>
           <p className="text-xs text-muted-foreground uppercase tracking-wide">
             Photography & Storytelling
           </p>
