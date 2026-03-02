@@ -18,9 +18,9 @@ const Logo = ({ className }: { className?: string }) => (
   <Image
     src="/logoRevelio completo sin fondo.png"
     alt="Logo Revelio"
-    width={160} 
-    height={53} 
-    className={cn("h-14 w-auto", className)} 
+    width={160}
+    height={53}
+    className={cn("h-14 w-auto", className)}
     priority
   />
 );
@@ -62,7 +62,7 @@ export default function Header() {
     }
   );
 
-  const linkColorClasses = "text-white";
+  const linkColorClasses = "text-primary-foreground";
 
   return (
     <header className={headerClasses}>
@@ -85,9 +85,9 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "font-medium text-sm transition-colors hover:text-gray-500",
+                  "font-bold text-sm transition-colors hover:text-primary",
                   linkColorClasses,
-                  pathname === item.href ? 'border-b-2 border-current' : ''
+                  pathname === item.href ? 'border-b-2 border-current hover:text-primary' : ''
                 )}
               >
                 {item.label}
@@ -118,8 +118,8 @@ export default function Header() {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  "block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10",
-                  pathname === item.href ? 'bg-white/20' : ''
+                  "block px-3 py-2 rounded-md text-base font-medium text-primary-foreground hover:bg-primary-foreground/10",
+                  pathname === item.href ? 'bg-primary-foreground/20' : ''
                 )}
               >
                 {item.label}
