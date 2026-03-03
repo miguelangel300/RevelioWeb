@@ -33,24 +33,28 @@ export default function Footer() {
       <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
 
         <div className="text-center md:text-left flex flex-col items-center md:items-start">
-          <Link href="/" className="mb-2 block">
-            <Logo />
-          </Link>
-          <p className="text-xs text-muted-foreground uppercase tracking-wide">
+          <div className="flex flex-col items-center md:items-start space-y-4">
+
+            <div className="flex items-center space-x-6">
+              <Link href="/" className="block">
+                <Logo />
+              </Link>
+              <a href="https://www.instagram.com/reveliophotography_/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">Instagram</span>
+                <CustomInstagramIcon className="h-6 w-6" />
+              </a>
+              <a href="https://www.tiktok.com/@reveliophotography?_r=1&_t=ZN-94LnY1tTszG" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <span className="sr-only">TikTok</span>
+                <CustomTikTokIcon className="h-6 w-6" />
+              </a>
+            </div>
+          </div>
+          <p className="text-xs text-muted-foreground uppercase tracking-wide mt-4">
             Photography & Storytelling
           </p>
         </div>
 
-        <div className="flex space-x-6">
-          <a href="https://www.instagram.com/reveliophotography_/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-            <span className="sr-only">Instagram</span>
-            <CustomInstagramIcon className="h-6 w-6" />
-          </a>
-          <a href="https://www.tiktok.com/@reveliophotography?_r=1&_t=ZN-94LnY1tTszG" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-            <span className="sr-only">TikTok</span>
-            <CustomTikTokIcon className="h-6 w-6" />
-          </a>
-        </div>
+
 
         <div className="text-xs text-muted-foreground text-center md:text-right">
           <p>© {currentYear} Revelio Photography. Todos los derechos reservados.</p>

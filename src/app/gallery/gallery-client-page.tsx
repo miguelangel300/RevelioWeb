@@ -204,7 +204,7 @@ export default function GalleryClientPage() {
           {/* Botón personalizado para cerrar */}
           <button
             onClick={() => setSelectedIndex(null)}
-            className="custom-close fixed top-56 right-4 sm:top-8 sm:right-6 z-[60] flex items-center justify-center p-2 bg-transparent border-none text-background/50 hover:text-background transition-all focus:outline-none"
+            className="custom-close fixed top-2 right-4 sm:top-8 sm:right-6 z-[60] flex items-center justify-center p-2 bg-transparent border-none text-background/50 hover:text-background transition-all focus:outline-none"
             title="Cerrar (O haz clic fuera de la foto)"
           >
             <X className="h-12 w-12" />

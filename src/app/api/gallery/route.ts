@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+export const dynamic = "force-dynamic";
 import fs from "fs";
 import path from "path";
 
@@ -23,7 +24,11 @@ export async function POST(req: Request) {
     let fileContent = fs.readFileSync(galleryFilePath, "utf8");
 
     // Buscamos el objeto de la foto (Regex con flag s para multilínea)
-    const regex = new RegExp(`({\\s*id:\\s*['"]${id}['"].*?})`, "gs");
+    // Usamos un patrón más estricto que requiere que el ID sea exacto
+    const regex = new RegExp(
+      `\\{[\\s\\S]*?id:\\s*['"]${id}['"][\\s\\S]*?\\}`,
+      "g",
+    );
     const matches = fileContent.match(regex);
 
     if (!matches || matches.length === 0) {
@@ -37,12 +42,13 @@ export async function POST(req: Request) {
 
     // LÓGICA DE BORRADO (DESCARTE)
     if (action === "DELETE") {
-      // Eliminar el objeto del archivo gallery.ts junto con la coma si la hay
-      const deleteRegex = new RegExp(
-        `[\\t ]*{\\s*id:\\s*['"]${id}['"].*?},?\\n?`,
+      // Reemplazamos exactamente el bloque encontrado, eliminando también la coma siguiente si existe
+      // Buscamos el objeto en el contexto del array (con posibles espacios/comas)
+      const exactDeleteRegex = new RegExp(
+        `\\s*\\{[\\s\\S]*?id:\\s*['"]${id}['"][\\s\\S]*?\\},?`,
         "g",
       );
-      fileContent = fileContent.replace(deleteRegex, "");
+      fileContent = fileContent.replace(exactDeleteRegex, "");
 
       // Mover la imagen físicamente a descartes
       const srcMatch = currentObjectStr.match(/src:\s*['"]([^'"]+)['"]/);
@@ -109,6 +115,53 @@ export async function POST(req: Request) {
     } else {
       // Eliminar la propiedad tags si ya no hay y se pasaron a otra categoría
       newObjectStr = newObjectStr.replace(/,?\s*tags:\s*\[.*?\]/, "");
+    }
+
+    // MOVER ARCHIVO FÍSICAMENTE
+    const srcMatch = currentObjectStr.match(/src:\s*['"]([^'"]+)['"]/);
+    if (srcMatch && srcMatch[1]) {
+      const oldRelativePath = srcMatch[1].startsWith("/")
+        ? srcMatch[1].slice(1)
+        : srcMatch[1];
+      const oldFilePath = path.join(process.cwd(), "public", oldRelativePath);
+
+      if (fs.existsSync(oldFilePath)) {
+        // Determinar carpeta de destino
+        const isBodaWithTags = category === "Bodas" && tags && tags.length > 0;
+        // Priorizar Momentos del Evento como subcarpeta principal
+        let subFolder = "";
+        if (isBodaWithTags) {
+          const mainTags = [
+            "Preparativos",
+            "Ceremonia",
+            "Fiesta",
+            "Sesión de Pareja",
+          ];
+          const momementTag = tags.find((t: string) => mainTags.includes(t));
+          subFolder = momementTag || tags[0]; // usar la etiqueta primordial o la 1a
+        }
+
+        const relativeDestDir = path.join(category, subFolder);
+        const destDir = path.join(process.cwd(), "public", relativeDestDir);
+
+        if (!fs.existsSync(destDir)) {
+          fs.mkdirSync(destDir, { recursive: true });
+        }
+
+        const fileName = path.basename(oldRelativePath);
+        const newFilePath = path.join(destDir, fileName);
+
+        // Mover físicamente el archivo web
+        fs.renameSync(oldFilePath, newFilePath);
+
+        // Reemplazar la ruta src en la String original de TypeScript
+        // El nuevo src DEBE llevar "/" por delante para que cargue en la web
+        const newSrc = `/${path.posix.join(category, subFolder, fileName)}`;
+        newObjectStr = newObjectStr.replace(
+          /src:\s*['"][^'"]+['"]/,
+          `src: ${JSON.stringify(newSrc)}`,
+        );
+      }
     }
 
     fileContent = fileContent.replace(currentObjectStr, newObjectStr);

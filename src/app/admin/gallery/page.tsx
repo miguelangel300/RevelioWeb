@@ -10,13 +10,16 @@ import { Trash2, CalendarClock } from 'lucide-react';
 
 export default function AdminGalleryPage() {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [photos, setPhotos] = useState(galleryPhotos);
+    // Filtrar para mostrar SOLO las fotos que están en la raíz (/public, ej: '/IMG_001.jpg')
+    // Las que ya han sido movidas a carpetas (/Bodas/Preparativos/...) se ocultan porque ya están clasificadas.
+    const [photos, setPhotos] = useState(galleryPhotos.filter(p => !p.src.substring(1).includes('/')));
     const [title, setTitle] = useState('');
     const [category, setCategory] = useState<string>('Bodas');
     const [selectedTags, setSelectedTags] = useState<string[]>([]);
     const [fileDateText, setFileDateText] = useState<string>('');
     const [fileDateColor, setFileDateColor] = useState<string>('');
     const [isSaving, setIsSaving] = useState(false);
+    const [isSyncing, setIsSyncing] = useState(false);
     const [message, setMessage] = useState('');
 
     const categories = ['Bodas', 'Retratos', 'Detalles', 'Editorial'];
@@ -65,6 +68,15 @@ export default function AdminGalleryPage() {
         }
     }, [currentIndex, currentPhoto]);
 
+    // Prevenir el scroll y enfocar el input automáticamente al cambiar de foto
+    useEffect(() => {
+        const titleInput = document.getElementById('titleInput');
+        if (titleInput) {
+            // Un pequeño delay para que el render ocurra antes
+            setTimeout(() => titleInput.focus({ preventScroll: true }), 50);
+        }
+    }, [currentIndex]);
+
     const toggleTag = (tag: string) => {
         setSelectedTags(prev =>
             prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
@@ -96,12 +108,10 @@ export default function AdminGalleryPage() {
 
             setMessage(`¡Guardada correctamente! (${currentIndex + 1}/${photos.length})`);
 
-            // Pasar a la siguiente foto automáticamente
+            // Pasar a la siguiente foto inmediatamente
             if (currentIndex < photos.length - 1) {
-                setTimeout(() => {
-                    setCurrentIndex(prev => prev + 1);
-                    setMessage('');
-                }, 500);
+                setCurrentIndex(prev => prev + 1);
+                setMessage('');
             } else {
                 setMessage('¡Ya has clasificado todas las fotos!');
             }
@@ -133,16 +143,39 @@ export default function AdminGalleryPage() {
 
             setMessage(`Imagen descartada y movida a /discarded_images.`);
 
-            setTimeout(() => {
-                setPhotos(prev => prev.filter(p => p.id !== currentPhoto.id));
-                setMessage('');
-            }, 800);
+            // Filtramos la foto de la lista inmediatamente
+            setPhotos(prev => prev.filter(p => p.id !== currentPhoto.id));
+            setMessage('');
 
         } catch (error) {
             console.error(error);
             setMessage('Hubo un error al descartar.');
         } finally {
             setIsSaving(false);
+        }
+    };
+
+    const handleSync = async () => {
+        setIsSyncing(true);
+        setMessage('Sincronizando carpetas locales...');
+
+        try {
+            const response = await fetch('/api/gallery/sync', { method: 'POST' });
+            const data = await response.json();
+
+            if (!response.ok) throw new Error(data.error || 'Error al sincronizar');
+
+            setMessage(data.message);
+
+            if (data.added > 0) {
+                // Recomendamos recargar para ver las nuevas fotos en la cola
+                setTimeout(() => window.location.reload(), 2000);
+            }
+        } catch (error) {
+            console.error(error);
+            setMessage('Hubo un error al sincronizar con el disco.');
+        } finally {
+            setIsSyncing(false);
         }
     };
 
@@ -163,9 +196,20 @@ export default function AdminGalleryPage() {
                     </span>
                 </div>
 
-                {/* Notificaciones */}
-                <div className="h-8 mb-4 font-bold text-green-600">
-                    {message}
+                {/* Notificaciones e Interfaz de Sincronización */}
+                <div className="w-full flex justify-between items-center mb-4 px-4 bg-muted/20 p-2 rounded-lg border border-border">
+                    <div className="font-bold text-green-600 truncate mr-4">
+                        {message}
+                    </div>
+
+                    <Button
+                        onClick={handleSync}
+                        disabled={isSyncing}
+                        variant="outline"
+                        className="shrink-0 text-primary border-primary/20 hover:bg-primary/5"
+                    >
+                        {isSyncing ? "Buscando..." : "Sincronizar Carpetas"}
+                    </Button>
                 </div>
 
                 <div className="flex flex-col md:flex-row w-full gap-8 bg-card shadow-xl rounded-2xl p-6 border border-border">
@@ -210,6 +254,7 @@ export default function AdminGalleryPage() {
                         <div className="space-y-2">
                             <label className="text-sm font-bold uppercase tracking-widest text-primary">2. Escribe un Título Breve</label>
                             <Input
+                                id="titleInput"
                                 type="text"
                                 value={title}
                                 onChange={(e) => setTitle(e.target.value)}

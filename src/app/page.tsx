@@ -61,7 +61,7 @@ export default function HomePage() {
                       fill
                       sizes="100vw"
                       quality={100}
-                      className="object-cover"
+                      className="object-cover 2xl:object-contain"
                       data-ai-hint={slide.dataAiHint}
                       priority={true}
                     />
