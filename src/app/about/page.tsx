@@ -1,68 +1,141 @@
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Camera, Heart, PawPrint, Users } from 'lucide-react';
+import { Heart, PawPrint, Quote } from 'lucide-react';
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-16 sm:py-24 space-y-20">
-      <section className="grid md:grid-cols-5 gap-12 items-center">
-        <div className="md:col-span-2">
-          <Image
-            src="/elia.jpg"
-            alt="El equipo de fotógrafos de boda Revelio"
-            width={600}
-            height={800}
-            className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[3/4]"
-            data-ai-hint="photography team portrait"
-          />
-        </div>
-        <div className="md:col-span-3">
-          <h1 className="text-5xl font-serif font-bold text-primary mb-6">
-            Fotografía de bodas natural y divertida en Sevilla
-          </h1>
-          <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
-            <p>
-              ¡Hola! Somos Revelio, fotógrafos de bodas en Sevilla y Andalucía. Nos apasiona capturar la alegría, la emoción y la autenticidad de cada pareja (¡y de sus mascotas!). Nuestras cámaras son la excusa perfecta para conectar con las personas y congelar la magia de los momentos reales, sin poses ni artificios.
-            </p>
-            <p>
-              Cada pareja (y cada mascota) tiene una historia única. Nuestro mayor privilegio es traducir esa energía a imágenes que transmitan verdad: la emoción en una mirada, la complicidad en un gesto, la alegría desbordante de una celebración, la locura de la fiesta y la ternura de los peludos.
-            </p>
-            <p>
-              Nuestro enfoque es cercano, relajado y divertido. El día de vuestra boda, seremos una presencia discreta (o los primeros en liarla en la pista si hace falta), amigos con cámaras, para que os sintáis cómodos y seáis vosotros mismos. Porque ahí, en la autenticidad y la fiesta, está la magia.
-            </p>
+    <div className="bg-background text-foreground transition-colors duration-300 antialiased font-sans flex flex-col pt-20">
+
+      {/* Intro Section */}
+      <section className="py-24 bg-muted/30 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            <div className="mb-12 lg:mb-0 pr-0 lg:pr-8">
+              <h2 className="font-script font-semibold text-primary text-5xl mb-4">
+                Somos Revelio
+              </h2>
+              <h3 className="font-serif text-3xl text-muted-foreground mb-6 italic">
+                Narradores de historias auténticas
+              </h3>
+              <div className="prose prose-lg text-muted-foreground font-light font-sans leading-relaxed">
+                <p className="mb-6">
+                  Más que fotógrafos, somos narradores de historias. Nuestra pasión es descubrir y capturar la esencia única de cada pareja, incluyendo a esos compañeros de vida incondicionales que son vuestras mascotas. Creamos un recuerdo visual que va más allá de la fotografía tradicional, celebrando el amor en todas sus formas.
+                </p>
+                <p className="mb-8">
+                  Buscamos la luz perfecta, el gesto inadvertido, la lágrima de alegría. Nuestro enfoque es documental y artístico, permitiendo que vuestro día fluya con naturalidad mientras nos encargamos de inmortalizar cada instante.
+                </p>
+              </div>
+
+            </div>
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-primary/10 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="relative overflow-hidden rounded-lg shadow-2xl aspect-[3/4] w-full max-w-md mx-auto">
+                {/* Usamos una de la galería que evoque retrato narrativo */}
+                <Image
+                  alt="Somos Revelio Photography"
+                  src="/elia.jpg"
+                  fill
+                  className="object-cover transform group-hover:scale-105 transition duration-700 ease-out"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-background rounded-full flex items-center justify-center shadow-lg border border-border z-10">
+                <span className="font-serif italic text-primary text-center leading-tight text-sm font-bold">
+                  Desde<br />2015
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="text-center max-w-4xl mx-auto">
-        <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
-        <h2 className="text-4xl font-serif font-semibold text-primary mb-6">
-          Nuestra Filosofía de Trabajo
-        </h2>
-        <p className="text-lg text-foreground/80 leading-relaxed">
-          Nuestro estilo es una mezcla de fotografía documental y artística. Documental, porque capturamos los hechos tal y como suceden, sin interferir. Artística, porque buscamos siempre la composición, la luz y el color que conviertan una foto en una pieza de arte. El resultado son imágenes atemporales, elegantes y cargadas de emoción, que os harán revivir vuestro día una y otra vez.
-        </p>
-        <div className="mt-8 flex items-center justify-center text-lg text-foreground/80 leading-relaxed bg-muted p-4 rounded-lg">
-            <PawPrint className="h-6 w-6 mr-3 text-primary shrink-0" />
-            <span>Por cierto, vuestros amigos peludos son más que bienvenidos. ¡Nos encanta incluir mascotas en las sesiones y que formen parte de vuestro gran día!</span>
+      {/* Mascotas Section */}
+      <section className="py-24 bg-background transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-script font-semibold text-5xl text-primary mb-4">
+              Mascotas: Un Miembro Más de la Familia
+            </h2>
+            <p className="font-serif text-xl text-muted-foreground font-light max-w-2xl mx-auto">
+              Entendemos que vuestra historia de amor no estaría completa sin ellos. Capturamos ese vínculo puro y leal que vuestras mascotas aportan a vuestro gran día.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <div className="relative overflow-hidden rounded-lg shadow-2xl h-[600px] w-full">
+                {/* Imagen sugerente de boda con perro/mascota si hubiera, usando una de retratos */}
+                <Image
+                  alt="Pareja con mascota"
+                  src="/_DMA7702_1.jpg"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-5 flex flex-col gap-8">
+              <div className="relative overflow-hidden rounded-lg shadow-xl h-[350px] w-full">
+                <Image
+                  alt="Detalles de mascotas en bodas"
+                  src="/_DMA7836.jpg"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
+              <div className="bg-muted/90 p-8 rounded-lg border-l-4 border-primary">
+                <p className="font-serif italic text-lg text-foreground leading-relaxed">
+                  "Desde el perro que lleva los anillos hasta el gato que observa desde la ventana, cada gesto de vuestros compañeros peludos es una pincelada más en el lienzo de vuestros recuerdos."
+                </p>
+                <div className="mt-6 flex items-center gap-2 text-primary font-sans text-xs uppercase tracking-widest font-bold">
+                  <PawPrint className="w-4 h-4" />
+                  <span>Wedding Pet Friendly</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="text-center">
-        <h2 className="text-4xl font-serif font-semibold text-primary mb-6">
+      {/* Testimonio Section */}
+      <section id="filosofia" className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <Image
+            alt="Fondo testimonio"
+            src="/_DMA8034.jpg"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
+          <Quote className="w-8 h-8 opacity-50 mb-6 text-primary-foreground fill-current" />
+          <p className="font-serif text-2xl md:text-3xl italic font-light leading-relaxed mb-8">
+            "Revelio no solo hizo fotos increíbles, sino que nos hizo sentir cómodos en todo momento. Capturaron emociones que ni sabíamos que estábamos mostrando. El mejor recuerdo de nuestra vida."
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <div className="h-px w-12 bg-primary-foreground/50"></div>
+            <span className="font-sans uppercase tracking-widest text-sm font-bold">Carmen & Hugo</span>
+            <div className="h-px w-12 bg-primary-foreground/50"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <section className="py-24 text-center bg-background">
+        <h2 className="text-5xl font-script font-semibold text-primary mb-6">
           ¿Listos para crear algo inolvidable?
         </h2>
-        <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
           Si nuestra visión de la fotografía de bodas resuena con vosotros, nos encantaría escuchar vuestra historia.
         </p>
-        <Button asChild size="lg">
+        <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full font-serif italic tracking-wide">
           <Link href="/contact">
-            Contactad con nosotros <Users className="ml-2 h-5 w-5" />
+            Contactad con nosotros
           </Link>
         </Button>
       </section>
+
     </div>
   );
 }

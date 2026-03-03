@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { explora, lato } from '@/lib/fonts';
+import { greatVibes, cormorantGaramond, lato } from '@/lib/fonts';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -67,7 +67,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </head>
-      <body className={`${explora.variable} ${lato.variable} font-sans antialiased flex flex-col min-h-screen bg-background text-foreground`}>
+      <body className={`${greatVibes.variable} ${cormorantGaramond.variable} ${lato.variable} font-sans antialiased flex flex-col min-h-screen bg-background text-foreground`}>
         <Header />
         <main className="flex-grow">
           {children}

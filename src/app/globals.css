@@ -73,6 +73,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  p {
+    @apply font-serif;
+  }
   
   body:has(.pt-0) {
     padding-top: 0;

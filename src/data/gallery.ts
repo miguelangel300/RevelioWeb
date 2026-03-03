@@ -9,9 +9,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA0810",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Bodas",
+    category: "Editorial",
     title: "Amor Eterno",
-    tags: ["La Ceremonia", "Blanco y Negro"],
+    tags: [],
   },
   {
     id: "_DMA0819",
@@ -19,8 +19,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA0819",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Editorial",
     title: "Sonrisas",
+    tags: [],
   },
   {
     id: "_DMA0858",
@@ -55,8 +56,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA1289",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Editorial",
     title: "Familia",
+    tags: [],
   },
   {
     id: "_DMA1364",
@@ -172,8 +174,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA6855",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "La víspera",
+    tags: ["Sesión de Pareja"]
   },
   {
     id: "_DMA6863",
@@ -181,8 +184,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA6863",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "Composición",
+    tags: ["Sesión de Pareja"]
   },
   {
     id: "_DMA6873",
@@ -219,7 +223,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Ese dia",
-    tags: ["Sesión de Pareja", "Exterior / Nature", "Minimalista"],
+    tags: ["Exterior / Nature", "Sesión de Pareja", "Exterior", "Minimalista"],
   },
   {
     id: "_DMA7607",
@@ -229,6 +233,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Retratos",
     title: "Nosotros",
+    tags: []
   },
   {
     id: "_DMA7644",
@@ -238,6 +243,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Detalles",
     title: "De vista",
+    tags: []
   },
   {
     id: "_DMA7702_1",
@@ -245,8 +251,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA7702_1",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "En familia",
+    tags: ["Sesión de Pareja", "Espontáneas", "Exterior"]
   },
   {
     id: "_DMA7726",
@@ -263,8 +270,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA7756",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "Día Inolvidable",
+    tags: ["Sesión de Pareja", "Espontáneas", "Exterior", "Golden Hour"]
   },
   {
     id: "_DMA7773",
@@ -272,8 +280,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA7773",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "Instantes",
+    tags: ["Sesión de Pareja", "Minimalista", "Golden Hour"]
   },
   {
     id: "_DMA7778",
@@ -281,8 +290,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA7778",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "Baile",
+    tags: ["Sesión de Pareja", "Golden Hour", "Exterior", "Minimalista"]
   },
   {
     id: "_DMA7836",
@@ -326,8 +336,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA7998",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "Elegancia",
+    tags: ["Sesión de Pareja", "Espontáneas", "Golden Hour"]
   },
   {
     id: "_DMA8034",
@@ -335,8 +346,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA8034",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "La Promesa",
+    tags: ["Sesión de Pareja", "Exterior", "Golden Hour", "Espontáneas"]
   },
   {
     id: "_DMA8050",
@@ -371,9 +383,9 @@ export const galleryPhotos: Photo[] = [
     alt: "_DMA8098",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Bodas",
+    category: "Detalles",
     title: "Amor Eterno",
-    tags: ["Pre-Boda / Preparativos", "Documental / Espontáneas"],
+    tags: [],
   },
   {
     id: "_DMA8170",
@@ -444,8 +456,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_0120_1",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Bodas",
+    category: "Editorial",
     title: "Detalles",
+    tags: []
   },
   {
     id: "IMG_0421",
@@ -482,6 +495,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Baile ",
+    tags: ["Fiesta", "Exterior"]
   },
   {
     id: "IMG_1125",
@@ -509,6 +523,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Party",
+    tags: ["Fiesta", "Interior", "Espontáneas"]
   },
   {
     id: "IMG_1419",
@@ -525,8 +540,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_1429",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "y tu!",
+    tags: ["Fiesta", "Interior"]
   },
   {
     id: "IMG_1473",
@@ -615,8 +631,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2158",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Editorial",
+    category: "Bodas",
     title: "Claroscuro",
+    tags: ["Espontáneas", "Fiesta", "Interior"]
   },
   {
     id: "IMG_2404",
@@ -624,8 +641,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2404",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Bodas",
-    title: "Día Inolvidable",
+    category: "Detalles",
+    title: "rojos",
+    tags: []
   },
   {
     id: "IMG_2492-1",
@@ -633,8 +651,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2492-1",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
+    category: "Bodas",
     title: "Instantes",
+    tags: ["Preparativos"]
   },
   {
     id: "IMG_2545",
@@ -642,8 +661,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2545",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Detalles",
-    title: "Flores",
+    category: "Bodas",
+    title: "",
+    tags: ["Preparativos"]
   },
   {
     id: "IMG_2598",
@@ -651,8 +671,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2598",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Editorial",
-    title: "Arte Visual",
+    category: "Retratos",
+    title: "familia",
+    tags: []
   },
   {
     id: "IMG_2614",
@@ -662,6 +683,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Sí, quiero",
+    tags: ["Preparativos"]
   },
   {
     id: "IMG_2641",
@@ -669,8 +691,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2641",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Retratos",
-    title: "Golden Hour",
+    category: "Bodas",
+    title: "familia",
+    tags: ["Preparativos"]
   },
   {
     id: "IMG_2648",
@@ -678,8 +701,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2648",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Detalles",
-    title: "Vestido",
+    category: "Bodas",
+    title: "hijo y padre",
+    tags: ["Blanco y Negro", "Preparativos"]
   },
   {
     id: "IMG_2733",
@@ -697,7 +721,8 @@ export const galleryPhotos: Photo[] = [
     dataAiHint: "foto boda",
     height: 800,
     category: "Bodas",
-    title: "La Promesa",
+    title: "La Familia",
+    tags: ["Preparativos"]
   },
   {
     id: "IMG_2754",
@@ -714,8 +739,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2791",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Detalles",
-    title: "Decoración",
+    category: "Bodas",
+    title: "juntas",
+    tags: ["Blanco y Negro", "Preparativos"]
   },
   {
     id: "IMG_2876",
@@ -723,8 +749,9 @@ export const galleryPhotos: Photo[] = [
     alt: "IMG_2876",
     dataAiHint: "foto boda",
     height: 800,
-    category: "Editorial",
+    category: "Detalles",
     title: "Composición",
+    tags: []
   },
   {
     id: "IMG_2898",
@@ -734,6 +761,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Amor Eterno",
+    tags: ["Preparativos"]
   },
   {
     id: "IMG_2914_1",

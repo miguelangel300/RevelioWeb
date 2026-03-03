@@ -22,8 +22,8 @@ export async function POST(req: Request) {
     );
     let fileContent = fs.readFileSync(galleryFilePath, "utf8");
 
-    // Buscamos el objeto de la foto (Regex relajada para pillar todo hasta la llave de cierre)
-    const regex = new RegExp(`({\\s*id:\\s*['"]${id}['"].*?})`, "g");
+    // Buscamos el objeto de la foto (Regex con flag s para multilínea)
+    const regex = new RegExp(`({\\s*id:\\s*['"]${id}['"].*?})`, "gs");
     const matches = fileContent.match(regex);
 
     if (!matches || matches.length === 0) {
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
     }
 
     // LÓGICA DE ACTUALIZACIÓN
-    if (!category || !title) {
+    if (!category || title === undefined) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 },
@@ -83,29 +83,32 @@ export async function POST(req: Request) {
     }
 
     let newObjectStr = currentObjectStr.replace(
-      /category:\s*['"][a-zA-ZÀ-ÿ0-9\s]+['"]/,
-      `category: '${category}'`,
+      /category:\s*['"].*?['"]/,
+      `category: ${JSON.stringify(category)}`,
     );
 
     newObjectStr = newObjectStr.replace(
-      /title:\s*['"][a-zA-ZÀ-ÿ0-9\s,]+['"]/,
-      `title: '${title}'`,
+      /title:\s*['"].*?['"]/,
+      `title: ${JSON.stringify(title)}`,
     );
 
     // Reemplazar o añadir tags si es una boda
     if (tags && Array.isArray(tags)) {
-      const tagsStr = `tags: [${tags.map((t: string) => `'${t}'`).join(", ")}]`;
+      const tagsStr = `tags: [${tags.map((t: string) => JSON.stringify(t)).join(", ")}]`;
 
       if (/tags:\s*\[.*?\]/.test(newObjectStr)) {
         // Reemplazar existente
         newObjectStr = newObjectStr.replace(/tags:\s*\[.*?\]/, tagsStr);
       } else {
-        // Inyectar antes de la llave de cierre
-        newObjectStr = newObjectStr.replace(/(\s*})$/, `, ${tagsStr}$1`);
+        // Inyectar antes de la llave de cierre, controlando la coma previa
+        newObjectStr = newObjectStr.replace(
+          /,?\s*}$/,
+          `,\n    ${tagsStr}\n  }`,
+        );
       }
     } else {
       // Eliminar la propiedad tags si ya no hay y se pasaron a otra categoría
-      newObjectStr = newObjectStr.replace(/,\s*tags:\s*\[.*?\]/, "");
+      newObjectStr = newObjectStr.replace(/,?\s*tags:\s*\[.*?\]/, "");
     }
 
     fileContent = fileContent.replace(currentObjectStr, newObjectStr);

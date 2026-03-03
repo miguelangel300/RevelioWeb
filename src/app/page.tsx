@@ -15,9 +15,9 @@ import { useState } from 'react';
 
 // --- CONFIGURACIÓN DEL CARRUSEL PRINCIPAL ---
 const heroSlides = [
+  { src: '/_DMA7595.jpg', alt: 'Foto de boda de alta calidad 3', dataAiHint: 'foto boda' },
   { src: '/IMG_8687.jpg', alt: 'Foto de boda de alta calidad 1', dataAiHint: 'foto boda' },
   { src: '/IMG_3153.jpg', alt: 'Foto de boda de alta calidad 2', dataAiHint: 'foto boda' },
-  { src: '/_DMA7595.jpg', alt: 'Foto de boda de alta calidad 3', dataAiHint: 'foto boda' },
 ];
 
 
@@ -102,11 +102,13 @@ export default function HomePage() {
             <p className="text-lg text-foreground/80 leading-relaxed mb-8">
               Buscamos la luz perfecta, el gesto inadvertido, la lágrima de alegría. Nuestro enfoque es documental y artístico, permitiendo que vuestro día fluya con naturalidad mientras nos encargamos de inmortalizar cada instante.
             </p>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/about">
-                Conoced nuestra filosofía <Heart className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Link
+              href="/about"
+              className="inline-flex items-center text-primary border-b border-primary pb-1 hover:text-primary/80 transition-colors uppercase text-sm tracking-widest font-sans font-medium mt-4"
+            >
+              Conoced nuestra filosofía
+              <Heart className="ml-2 w-4 h-4" />
+            </Link>
           </div>
           <div className="order-1 md:order-2">
             <Image
