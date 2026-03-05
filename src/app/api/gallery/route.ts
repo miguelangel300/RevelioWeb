@@ -8,12 +8,47 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { id, category, title, action, tags } = body;
 
-    if (!id) {
+    if (!id || typeof id !== "string") {
       return NextResponse.json(
-        { error: "Missing required id" },
+        { error: "Missing or invalid required id" },
         { status: 400 },
       );
     }
+
+    if (
+      category &&
+      (typeof category !== "string" ||
+        category.includes("..") ||
+        category.includes("/") ||
+        category.includes("\\"))
+    ) {
+      return NextResponse.json(
+        { error: "Invalid category format" },
+        { status: 400 },
+      );
+    }
+
+    if (tags && Array.isArray(tags)) {
+      for (const tag of tags) {
+        if (
+          typeof tag !== "string" ||
+          tag.includes("..") ||
+          tag.includes("/") ||
+          tag.includes("\\")
+        ) {
+          return NextResponse.json(
+            { error: "Invalid tag format" },
+            { status: 400 },
+          );
+        }
+      }
+    }
+
+    // Helper para escapar el input en la expresión regular
+    const escapeRegExp = (string: string) => {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    };
+    const safeId = escapeRegExp(id);
 
     const galleryFilePath = path.join(
       process.cwd(),
@@ -26,7 +61,7 @@ export async function POST(req: Request) {
     // Buscamos el objeto de la foto (Regex con flag s para multilínea)
     // Usamos un patrón más estricto que requiere que el ID sea exacto
     const regex = new RegExp(
-      `\\{[\\s\\S]*?id:\\s*['"]${id}['"][\\s\\S]*?\\}`,
+      `\\{[\\s\\S]*?id:\\s*['"]${safeId}['"][\\s\\S]*?\\}`,
       "g",
     );
     const matches = fileContent.match(regex);
@@ -45,7 +80,7 @@ export async function POST(req: Request) {
       // Reemplazamos exactamente el bloque encontrado, eliminando también la coma siguiente si existe
       // Buscamos el objeto en el contexto del array (con posibles espacios/comas)
       const exactDeleteRegex = new RegExp(
-        `\\s*\\{[\\s\\S]*?id:\\s*['"]${id}['"][\\s\\S]*?\\},?`,
+        `\\s*\\{[\\s\\S]*?id:\\s*['"]${safeId}['"][\\s\\S]*?\\},?`,
         "g",
       );
       fileContent = fileContent.replace(exactDeleteRegex, "");
@@ -56,6 +91,14 @@ export async function POST(req: Request) {
         const relativePath = srcMatch[1].startsWith("/")
           ? srcMatch[1].slice(1)
           : srcMatch[1];
+
+        if (relativePath.includes("..")) {
+          return NextResponse.json(
+            { error: "Invalid source path" },
+            { status: 400 },
+          );
+        }
+
         const oldFilePath = path.join(process.cwd(), "public", relativePath);
         const discardedDir = path.join(
           process.cwd(),
@@ -102,9 +145,9 @@ export async function POST(req: Request) {
     if (tags && Array.isArray(tags)) {
       const tagsStr = `tags: [${tags.map((t: string) => JSON.stringify(t)).join(", ")}]`;
 
-      if (/tags:\s*\[.*?\]/.test(newObjectStr)) {
+      if (/tags:\s*\[[^\]]*\]/.test(newObjectStr)) {
         // Reemplazar existente
-        newObjectStr = newObjectStr.replace(/tags:\s*\[.*?\]/, tagsStr);
+        newObjectStr = newObjectStr.replace(/tags:\s*\[[^\]]*\]/, tagsStr);
       } else {
         // Inyectar antes de la llave de cierre, controlando la coma previa
         newObjectStr = newObjectStr.replace(
@@ -114,7 +157,7 @@ export async function POST(req: Request) {
       }
     } else {
       // Eliminar la propiedad tags si ya no hay y se pasaron a otra categoría
-      newObjectStr = newObjectStr.replace(/,?\s*tags:\s*\[.*?\]/, "");
+      newObjectStr = newObjectStr.replace(/,?\s*tags:\s*\[[^\]]*\]/g, "");
     }
 
     // MOVER ARCHIVO FÍSICAMENTE
@@ -123,6 +166,14 @@ export async function POST(req: Request) {
       const oldRelativePath = srcMatch[1].startsWith("/")
         ? srcMatch[1].slice(1)
         : srcMatch[1];
+
+      if (oldRelativePath.includes("..")) {
+        return NextResponse.json(
+          { error: "Invalid source path" },
+          { status: 400 },
+        );
+      }
+
       const oldFilePath = path.join(process.cwd(), "public", oldRelativePath);
 
       if (fs.existsSync(oldFilePath)) {
@@ -141,8 +192,16 @@ export async function POST(req: Request) {
           subFolder = momementTag || tags[0]; // usar la etiqueta primordial o la 1a
         }
 
-        const relativeDestDir = path.join(category, subFolder);
-        const destDir = path.join(process.cwd(), "public", relativeDestDir);
+        const publicDir = path.join(process.cwd(), "public");
+        const destDir = path.resolve(publicDir, category, subFolder);
+
+        // Validar que el destino siga dentro de public para evitar path traversal
+        if (!destDir.startsWith(publicDir)) {
+          return NextResponse.json(
+            { error: "Path traversal detected" },
+            { status: 400 },
+          );
+        }
 
         if (!fs.existsSync(destDir)) {
           fs.mkdirSync(destDir, { recursive: true });
