@@ -179,6 +179,30 @@ export default function AdminGalleryPage() {
         }
     };
 
+    const handleClean = async () => {
+        setIsSyncing(true);
+        setMessage('Buscando imágenes borradas...');
+
+        try {
+            const response = await fetch('/api/gallery/clean', { method: 'POST' });
+            const data = await response.json();
+
+            if (!response.ok) throw new Error(data.error || 'Error al limpiar');
+
+            setMessage(data.message);
+
+            if (data.removed > 0) {
+                // Recargar si ha borrado algo que estaba en memoria
+                setTimeout(() => window.location.reload(), 2500);
+            }
+        } catch (error) {
+            console.error(error);
+            setMessage('Hubo un error al limpiar la galería.');
+        } finally {
+            setIsSyncing(false);
+        }
+    };
+
     if (!currentPhoto) {
         return <div className="p-20 text-center">No hay más fotos.</div>;
     }
@@ -202,14 +226,25 @@ export default function AdminGalleryPage() {
                         {message}
                     </div>
 
-                    <Button
-                        onClick={handleSync}
-                        disabled={isSyncing}
-                        variant="outline"
-                        className="shrink-0 text-primary border-primary/20 hover:bg-primary/5"
-                    >
-                        {isSyncing ? "Buscando..." : "Sincronizar Carpetas"}
-                    </Button>
+                    <div className="flex gap-2">
+                        <Button
+                            onClick={handleClean}
+                            disabled={isSyncing}
+                            variant="outline"
+                            className="shrink-0 text-red-500 border-red-200 hover:bg-red-50 hover:text-red-600"
+                        >
+                            <Trash2 className="w-4 h-4 mr-2" />
+                            {isSyncing ? "Limpiando..." : "Limpiar Enlaces Rotos"}
+                        </Button>
+                        <Button
+                            onClick={handleSync}
+                            disabled={isSyncing}
+                            variant="outline"
+                            className="shrink-0 text-primary border-primary/20 hover:bg-primary/5"
+                        >
+                            {isSyncing ? "Buscando..." : "Sincronizar Carpetas"}
+                        </Button>
+                    </div>
                 </div>
 
                 <div className="flex flex-col md:flex-row w-full gap-8 bg-card shadow-xl rounded-2xl p-6 border border-border">

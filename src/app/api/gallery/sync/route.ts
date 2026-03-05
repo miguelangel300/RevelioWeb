@@ -59,24 +59,44 @@ export async function POST() {
         return;
       }
 
-      // Analizar las carpetas para deducir categoría y tags
-      const parts = relativePath.split("/").filter(Boolean); // ["Bodas", "Fiesta", "foto.jpg"]
+      // Analizar las carpetas para deducir categoría, subFolder y tags
+      // Estructura esperada para bodas: bodas/NombreBoda/tag/foto.jpg
+      const parts = relativePath.split("/").filter(Boolean);
       let category = "Bodas"; // Default
+      let subFolder = "";
       let title = id;
       const tags: string[] = [];
 
       if (parts.length > 1) {
-        // La foto está dentro de una carpeta. La primera carpeta suele ser la categoría
         const potentialCategory = parts[0];
-        if (validCategories.includes(potentialCategory)) {
-          category = potentialCategory;
+        // Normalizar: "bodas" -> "Bodas"
+        const normalizedCategory =
+          potentialCategory.charAt(0).toUpperCase() +
+          potentialCategory.slice(1).toLowerCase();
+        if (
+          validCategories
+            .map((c) => c.toLowerCase())
+            .includes(potentialCategory.toLowerCase())
+        ) {
+          category =
+            validCategories.find(
+              (c) => c.toLowerCase() === potentialCategory.toLowerCase(),
+            ) || category;
         }
 
-        // Si es bodas y tiene subcarpetas, la subcarpeta del medio será el tag
-        if (category === "Bodas" && parts.length > 2) {
-          // ["Bodas", "Preparativos", "foto.jpg"]
-          const subFolder = parts[1];
-          tags.push(subFolder);
+        if (category === "Bodas") {
+          // Estructura: bodas/NombreBoda/tag/foto.jpg
+          if (parts.length >= 4) {
+            // parts = ["bodas", "Alejandro y Marta", "barraLibre", "foto.jpg"]
+            subFolder = parts[1]; // Nombre de la boda
+            tags.push(parts[2]); // Tag (barraLibre, coctel, etc.)
+          } else if (parts.length === 3) {
+            // parts = ["bodas", "Alejandro y Marta", "foto.jpg"]
+            subFolder = parts[1];
+          }
+        } else if (parts.length > 2) {
+          // Otras categorías con subcarpetas
+          tags.push(parts[1]);
         }
       }
 
@@ -90,6 +110,10 @@ export async function POST() {
     height: 800,
     category: "${category}",
     title: "${title}",`;
+
+      if (subFolder) {
+        newEntryStr += `\n    subFolder: "${subFolder}",`;
+      }
 
       if (tags.length > 0) {
         newEntryStr += `\n    tags: [${tags.map((t) => JSON.stringify(t)).join(", ")}]`;

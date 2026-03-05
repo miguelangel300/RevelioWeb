@@ -10,7 +10,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Editorial",
     title: "Amor Eterno",
-    tags: [],
   },
 {
     id: "_DMA0819",
@@ -20,7 +19,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Editorial",
     title: "Sonrisas",
-    tags: [],
   },
 {
     id: "_DMA0858",
@@ -57,7 +55,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Editorial",
     title: "Familia",
-    tags: [],
   },
 {
     id: "_DMA1364",
@@ -175,7 +172,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "La víspera",
-    tags: ["Sesión de Pareja"]
+    tags: ["Sesión de Pareja"],
   },
 {
     id: "_DMA6863",
@@ -185,7 +182,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Composición",
-    tags: ["Sesión de Pareja"]
+    tags: ["Sesión de Pareja"],
   },
 {
     id: "_DMA6873",
@@ -222,7 +219,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Ese dia",
-    tags: ["Exterior / Nature", "Sesión de Pareja", "Exterior", "Minimalista"],
+    tags: ["Exterior / Nature","Sesión de Pareja","Exterior","Minimalista"],
   },
 {
     id: "_DMA7607",
@@ -232,7 +229,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Retratos",
     title: "Nosotros",
-    tags: []
   },
 {
     id: "_DMA7644",
@@ -242,7 +238,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Detalles",
     title: "De vista",
-    tags: []
   },
 {
     id: "_DMA7702_1",
@@ -252,7 +247,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "En familia",
-    tags: ["Sesión de Pareja", "Espontáneas", "Exterior"]
+    tags: ["Sesión de Pareja","Espontáneas","Exterior"],
   },
 {
     id: "_DMA7756",
@@ -262,7 +257,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Día Inolvidable",
-    tags: ["Sesión de Pareja", "Espontáneas", "Exterior", "Golden Hour"]
+    tags: ["Sesión de Pareja","Espontáneas","Exterior","Golden Hour"],
   },
 {
     id: "_DMA7773",
@@ -272,7 +267,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Instantes",
-    tags: ["Sesión de Pareja", "Minimalista", "Golden Hour"]
+    tags: ["Sesión de Pareja","Minimalista","Golden Hour"],
   },
 {
     id: "_DMA7778",
@@ -282,7 +277,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Baile",
-    tags: ["Sesión de Pareja", "Golden Hour", "Exterior", "Minimalista"]
+    tags: ["Sesión de Pareja","Golden Hour","Exterior","Minimalista"],
   },
 {
     id: "_DMA7836",
@@ -319,7 +314,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Elegancia",
-    tags: ["Sesión de Pareja", "Espontáneas", "Golden Hour"]
+    tags: ["Sesión de Pareja","Espontáneas","Golden Hour"],
   },
 {
     id: "_DMA8034",
@@ -329,7 +324,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "La Promesa",
-    tags: ["Sesión de Pareja", "Exterior", "Golden Hour", "Espontáneas"]
+    tags: ["Sesión de Pareja","Exterior","Golden Hour","Espontáneas"],
   },
 {
     id: "_DMA8050",
@@ -366,7 +361,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Detalles",
     title: "Amor Eterno",
-    tags: [],
   },
 {
     id: "_DMA8170",
@@ -439,7 +433,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Editorial",
     title: "Detalles",
-    tags: []
   },
 {
     id: "IMG_0421",
@@ -476,7 +469,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Baile ",
-    tags: ["Fiesta", "Exterior"]
+    tags: ["Fiesta","Exterior"],
   },
 {
     id: "IMG_1125",
@@ -504,7 +497,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Party",
-    tags: ["Fiesta", "Interior", "Espontáneas"]
+    tags: ["Fiesta","Interior","Espontáneas"],
   },
 {
     id: "IMG_1419",
@@ -523,7 +516,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "y tu!",
-    tags: ["Fiesta", "Interior"]
+    tags: ["Fiesta","Interior"],
   },
 {
     id: "IMG_1473",
@@ -596,7 +589,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Claroscuro",
-    tags: ["Espontáneas", "Fiesta", "Interior"]
+    tags: ["Espontáneas","Fiesta","Interior"],
   },
 {
     id: "IMG_2404",
@@ -606,7 +599,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Detalles",
     title: "rojos",
-    tags: []
   },
 {
     id: "IMG_2492-1",
@@ -616,7 +608,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Instantes",
-    tags: ["Preparativos"]
+    tags: ["Preparativos"],
   },
 {
     id: "IMG_2545",
@@ -625,8 +617,7 @@ export const galleryPhotos: Photo[] = [
     dataAiHint: "foto boda",
     height: 800,
     category: "Bodas",
-    title: "",
-    tags: ["Preparativos"]
+    tags: ["Preparativos"],
   },
 {
     id: "IMG_2598",
@@ -636,7 +627,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Retratos",
     title: "familia",
-    tags: []
   },
 {
     id: "IMG_2614",
@@ -646,7 +636,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Sí, quiero",
-    tags: ["Preparativos"]
+    tags: ["Preparativos"],
   },
 {
     id: "IMG_2641",
@@ -656,7 +646,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "familia",
-    tags: ["Preparativos"]
+    tags: ["Preparativos"],
   },
 {
     id: "IMG_2648",
@@ -666,7 +656,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "hijo y padre",
-    tags: ["Blanco y Negro", "Preparativos"]
+    tags: ["Blanco y Negro","Preparativos"],
   },
 {
     id: "IMG_2733",
@@ -685,7 +675,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "La Familia",
-    tags: ["Preparativos"]
+    tags: ["Preparativos"],
   },
 {
     id: "IMG_2791",
@@ -695,7 +685,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "juntas",
-    tags: ["Blanco y Negro", "Preparativos"]
+    tags: ["Blanco y Negro","Preparativos"],
   },
 {
     id: "IMG_2876",
@@ -705,7 +695,6 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Detalles",
     title: "Composición",
-    tags: []
   },
 {
     id: "IMG_2898",
@@ -715,7 +704,7 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "Amor Eterno",
-    tags: ["Preparativos"]
+    tags: ["Preparativos"],
   },
 {
     id: "IMG_2914_1",
@@ -3200,5 +3189,1756 @@ export const galleryPhotos: Photo[] = [
     height: 800,
     category: "Bodas",
     title: "miguel",
+  }
+, 
+  {
+    id: "DMA-120",
+    src: "/bodas/Marta y Alejandro/ceremonia/DMA-120.jpg",
+    alt: "DMA-120",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-120",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "DMA-128",
+    src: "/bodas/Marta y Alejandro/ceremonia/DMA-128.jpg",
+    alt: "DMA-128",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-128",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "DMA-129",
+    src: "/bodas/Marta y Alejandro/ceremonia/DMA-129.jpg",
+    alt: "DMA-129",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-129",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "DMA-141",
+    src: "/bodas/Marta y Alejandro/ceremonia/DMA-141.jpg",
+    alt: "DMA-141",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-141",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "DMA-243",
+    src: "/bodas/Marta y Alejandro/ceremonia/DMA-243.jpg",
+    alt: "DMA-243",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-243",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "DMA-285",
+    src: "/bodas/Marta y Alejandro/ceremonia/DMA-285.jpg",
+    alt: "DMA-285",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-285",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "DMA-45",
+    src: "/bodas/Marta y Alejandro/ceremonia/DMA-45.jpg",
+    alt: "DMA-45",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-45",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "DMA-95",
+    src: "/bodas/Marta y Alejandro/ceremonia/DMA-95.jpg",
+    alt: "DMA-95",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-95",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_DMA3590-Editar",
+    src: "/bodas/Marta y Alejandro/ceremonia/_DMA3590-Editar.jpg",
+    alt: "_DMA3590-Editar",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_DMA3590-Editar",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_DMA3683",
+    src: "/bodas/Marta y Alejandro/ceremonia/_DMA3683.jpg",
+    alt: "_DMA3683",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_DMA3683",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_DMA3724",
+    src: "/bodas/Marta y Alejandro/ceremonia/_DMA3724.jpg",
+    alt: "_DMA3724",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_DMA3724",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_DMA4609-2",
+    src: "/bodas/Marta y Alejandro/ceremonia/_DMA4609-2.jpg",
+    alt: "_DMA4609-2",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_DMA4609-2",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_DMA4737",
+    src: "/bodas/Marta y Alejandro/ceremonia/_DMA4737.jpg",
+    alt: "_DMA4737",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_DMA4737",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_SOL5748",
+    src: "/bodas/Marta y Alejandro/ceremonia/_SOL5748.jpg",
+    alt: "_SOL5748",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_SOL5748",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_SOL5789",
+    src: "/bodas/Marta y Alejandro/ceremonia/_SOL5789.jpg",
+    alt: "_SOL5789",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_SOL5789",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_SOL5793",
+    src: "/bodas/Marta y Alejandro/ceremonia/_SOL5793.jpg",
+    alt: "_SOL5793",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_SOL5793",
+    subFolder: "Marta y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (18)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (18).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (18)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (18)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (183)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (183).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (183)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (183)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (19)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (19).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (19)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (19)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (209)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (209).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (209)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (209)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (211)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (211).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (211)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (211)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (23)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (23).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (23)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (23)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (24)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (24).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (24)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (24)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (252)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (252).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (252)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (252)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (27)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (27).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (27)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (27)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (31)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (31).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (31)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (31)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (32)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (32).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (32)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (32)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (33)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (33).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (33)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (33)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (37)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (37).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (37)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (37)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (45)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (45).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (45)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (45)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (46)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (46).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (46)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (46)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (58)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (58).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (58)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (58)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "BodaAlejandroyMarta_Cocktail (73)",
+    src: "/bodas/Marta y Alejandro/coctel/BodaAlejandroyMarta_Cocktail (73).jpg",
+    alt: "BodaAlejandroyMarta_Cocktail (73)",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "BodaAlejandroyMarta_Cocktail (73)",
+    subFolder: "Marta y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "Preparativos-11",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-11.jpg",
+    alt: "Preparativos-11",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-11",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-14",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-14.jpg",
+    alt: "Preparativos-14",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-14",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-154",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-154.jpg",
+    alt: "Preparativos-154",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-154",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-186",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-186.jpg",
+    alt: "Preparativos-186",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-186",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-198",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-198.jpg",
+    alt: "Preparativos-198",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-198",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-33",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-33.jpg",
+    alt: "Preparativos-33",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-33",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-34",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-34.jpg",
+    alt: "Preparativos-34",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-34",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-41",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-41.jpg",
+    alt: "Preparativos-41",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-41",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-47",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-47.jpg",
+    alt: "Preparativos-47",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-47",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-48",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-48.jpg",
+    alt: "Preparativos-48",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-48",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-60",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-60.jpg",
+    alt: "Preparativos-60",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-60",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos-89",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos-89.jpg",
+    alt: "Preparativos-89",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-89",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "Preparativos",
+    src: "/bodas/Marta y Alejandro/fiesta/Preparativos.jpg",
+    alt: "Preparativos",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos",
+    subFolder: "Marta y Alejandro",
+    tags: ["fiesta"]
+  },
+
+  {
+    id: "DMA-1",
+    src: "/bodas/Marta y Alejandro/preparacion/DMA-1.jpg",
+    alt: "DMA-1",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-1",
+    subFolder: "Marta y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "DMA-16",
+    src: "/bodas/Marta y Alejandro/preparacion/DMA-16.jpg",
+    alt: "DMA-16",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-16",
+    subFolder: "Marta y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "DMA-19",
+    src: "/bodas/Marta y Alejandro/preparacion/DMA-19.jpg",
+    alt: "DMA-19",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-19",
+    subFolder: "Marta y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "DMA-20",
+    src: "/bodas/Marta y Alejandro/preparacion/DMA-20.jpg",
+    alt: "DMA-20",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-20",
+    subFolder: "Marta y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "DMA-3",
+    src: "/bodas/Marta y Alejandro/preparacion/DMA-3.jpg",
+    alt: "DMA-3",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-3",
+    subFolder: "Marta y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "DMA-35",
+    src: "/bodas/Marta y Alejandro/preparacion/DMA-35.jpg",
+    alt: "DMA-35",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-35",
+    subFolder: "Marta y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "DMA-7",
+    src: "/bodas/Marta y Alejandro/preparacion/DMA-7.jpg",
+    alt: "DMA-7",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "DMA-7",
+    subFolder: "Marta y Alejandro",
+    tags: ["preparacion"]
+  }
+, 
+  {
+    id: "miniatura",
+    src: "/bodas/Marta y Alejandro/miniatura.jpg",
+    alt: "miniatura",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "miniatura",
+    subFolder: "Marta y Alejandro",
+  }
+, 
+  {
+    id: "barralibre0003",
+    src: "/bodas/Carla y Miguel/barraLibre/barralibre0003.jpg",
+    alt: "barralibre0003",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "barralibre0003",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "barralibre0005",
+    src: "/bodas/Carla y Miguel/barraLibre/barralibre0005.jpg",
+    alt: "barralibre0005",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "barralibre0005",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "barralibre0010",
+    src: "/bodas/Carla y Miguel/barraLibre/barralibre0010.jpg",
+    alt: "barralibre0010",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "barralibre0010",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "barralibre0025",
+    src: "/bodas/Carla y Miguel/barraLibre/barralibre0025.jpg",
+    alt: "barralibre0025",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "barralibre0025",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "barralibre0027",
+    src: "/bodas/Carla y Miguel/barraLibre/barralibre0027.jpg",
+    alt: "barralibre0027",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "barralibre0027",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "barralibre0029",
+    src: "/bodas/Carla y Miguel/barraLibre/barralibre0029.jpg",
+    alt: "barralibre0029",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "barralibre0029",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "barralibre0051",
+    src: "/bodas/Carla y Miguel/barraLibre/barralibre0051.jpg",
+    alt: "barralibre0051",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "barralibre0051",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "barralibre0053",
+    src: "/bodas/Carla y Miguel/barraLibre/barralibre0053.jpg",
+    alt: "barralibre0053",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "barralibre0053",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0014",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0014.jpg",
+    alt: "Fiesta0014",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0014",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0017",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0017.jpg",
+    alt: "Fiesta0017",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0017",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0021",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0021.jpg",
+    alt: "Fiesta0021",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0021",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0037",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0037.jpg",
+    alt: "Fiesta0037",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0037",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0039",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0039.jpg",
+    alt: "Fiesta0039",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0039",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0042",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0042.jpg",
+    alt: "Fiesta0042",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0042",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0058",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0058.jpg",
+    alt: "Fiesta0058",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0058",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0061",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0061.jpg",
+    alt: "Fiesta0061",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0061",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0078",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0078.jpg",
+    alt: "Fiesta0078",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0078",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0082",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0082.jpg",
+    alt: "Fiesta0082",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0082",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Fiesta0083",
+    src: "/bodas/Carla y Miguel/barraLibre/Fiesta0083.jpg",
+    alt: "Fiesta0083",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Fiesta0083",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_1853-2",
+    src: "/bodas/Carla y Miguel/barraLibre/IMG_1853-2.jpg",
+    alt: "IMG_1853-2",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1853-2",
+    subFolder: "Carla y Miguel",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "Ceremonia0001",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0001.jpg",
+    alt: "Ceremonia0001",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0001",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0002",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0002.jpg",
+    alt: "Ceremonia0002",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0002",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0003",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0003.jpg",
+    alt: "Ceremonia0003",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0003",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0004",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0004.jpg",
+    alt: "Ceremonia0004",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0004",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0005",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0005.jpg",
+    alt: "Ceremonia0005",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0005",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0006",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0006.jpg",
+    alt: "Ceremonia0006",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0006",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0007",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0007.jpg",
+    alt: "Ceremonia0007",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0007",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0009",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0009.jpg",
+    alt: "Ceremonia0009",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0009",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0010",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0010.jpg",
+    alt: "Ceremonia0010",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0010",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0011",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0011.jpg",
+    alt: "Ceremonia0011",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0011",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0012",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0012.jpg",
+    alt: "Ceremonia0012",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0012",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0013",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0013.jpg",
+    alt: "Ceremonia0013",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0013",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0014",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0014.jpg",
+    alt: "Ceremonia0014",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0014",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0015",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0015.jpg",
+    alt: "Ceremonia0015",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0015",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0017",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0017.jpg",
+    alt: "Ceremonia0017",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0017",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0018",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0018.jpg",
+    alt: "Ceremonia0018",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0018",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0019",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0019.jpg",
+    alt: "Ceremonia0019",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0019",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0020",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0020.jpg",
+    alt: "Ceremonia0020",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0020",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0021",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0021.jpg",
+    alt: "Ceremonia0021",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0021",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0022",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0022.jpg",
+    alt: "Ceremonia0022",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0022",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0023",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0023.jpg",
+    alt: "Ceremonia0023",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0023",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0024",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0024.jpg",
+    alt: "Ceremonia0024",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0024",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0025",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0025.jpg",
+    alt: "Ceremonia0025",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0025",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0026",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0026.jpg",
+    alt: "Ceremonia0026",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0026",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0027",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0027.jpg",
+    alt: "Ceremonia0027",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0027",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0028",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0028.jpg",
+    alt: "Ceremonia0028",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0028",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0029",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0029.jpg",
+    alt: "Ceremonia0029",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0029",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0030",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0030.jpg",
+    alt: "Ceremonia0030",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0030",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0031",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0031.jpg",
+    alt: "Ceremonia0031",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0031",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0032",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0032.jpg",
+    alt: "Ceremonia0032",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0032",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0033",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0033.jpg",
+    alt: "Ceremonia0033",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0033",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0034",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0034.jpg",
+    alt: "Ceremonia0034",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0034",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0035",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0035.jpg",
+    alt: "Ceremonia0035",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0035",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0036",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0036.jpg",
+    alt: "Ceremonia0036",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0036",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "Ceremonia0037",
+    src: "/bodas/Carla y Miguel/ceremonia/Ceremonia0037.jpg",
+    alt: "Ceremonia0037",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Ceremonia0037",
+    subFolder: "Carla y Miguel",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "cocktail0022",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0022.jpg",
+    alt: "cocktail0022",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0022",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0025",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0025.jpg",
+    alt: "cocktail0025",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0025",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0031",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0031.jpg",
+    alt: "cocktail0031",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0031",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0032",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0032.jpg",
+    alt: "cocktail0032",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0032",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0035",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0035.jpg",
+    alt: "cocktail0035",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0035",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0040",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0040.jpg",
+    alt: "cocktail0040",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0040",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0041",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0041.jpg",
+    alt: "cocktail0041",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0041",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0045",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0045.jpg",
+    alt: "cocktail0045",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0045",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0048",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0048.jpg",
+    alt: "cocktail0048",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0048",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0052",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0052.jpg",
+    alt: "cocktail0052",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0052",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0061",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0061.jpg",
+    alt: "cocktail0061",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0061",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0065",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0065.jpg",
+    alt: "cocktail0065",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0065",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0069",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0069.jpg",
+    alt: "cocktail0069",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0069",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0070",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0070.jpg",
+    alt: "cocktail0070",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0070",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0080",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0080.jpg",
+    alt: "cocktail0080",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0080",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0085",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0085.jpg",
+    alt: "cocktail0085",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0085",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0100",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0100.jpg",
+    alt: "cocktail0100",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0100",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0105",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0105.jpg",
+    alt: "cocktail0105",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0105",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "cocktail0130",
+    src: "/bodas/Carla y Miguel/coctel/cocktail0130.jpg",
+    alt: "cocktail0130",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "cocktail0130",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0739",
+    src: "/bodas/Carla y Miguel/coctel/IMG_0739.jpg",
+    alt: "IMG_0739",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0739",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_1204",
+    src: "/bodas/Carla y Miguel/coctel/IMG_1204.jpg",
+    alt: "IMG_1204",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1204",
+    subFolder: "Carla y Miguel",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0330",
+    src: "/bodas/Carla y Miguel/preparacion/IMG_0330.jpg",
+    alt: "IMG_0330",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0330",
+    subFolder: "Carla y Miguel",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_0694",
+    src: "/bodas/Carla y Miguel/preparacion/IMG_0694.jpg",
+    alt: "IMG_0694",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0694",
+    subFolder: "Carla y Miguel",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_0735",
+    src: "/bodas/Carla y Miguel/preparacion/IMG_0735.jpg",
+    alt: "IMG_0735",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0735",
+    subFolder: "Carla y Miguel",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_0867",
+    src: "/bodas/Carla y Miguel/preparacion/IMG_0867.jpg",
+    alt: "IMG_0867",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0867",
+    subFolder: "Carla y Miguel",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_0889",
+    src: "/bodas/Carla y Miguel/preparacion/IMG_0889.jpg",
+    alt: "IMG_0889",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0889",
+    subFolder: "Carla y Miguel",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_0911-2",
+    src: "/bodas/Carla y Miguel/preparacion/IMG_0911-2.jpg",
+    alt: "IMG_0911-2",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0911-2",
+    subFolder: "Carla y Miguel",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "Preparativos-10",
+    src: "/bodas/Carla y Miguel/sesion/Preparativos-10.jpg",
+    alt: "Preparativos-10",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-10",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "Preparativos-2",
+    src: "/bodas/Carla y Miguel/sesion/Preparativos-2.jpg",
+    alt: "Preparativos-2",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-2",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "Preparativos-3",
+    src: "/bodas/Carla y Miguel/sesion/Preparativos-3.jpg",
+    alt: "Preparativos-3",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-3",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "Preparativos-5",
+    src: "/bodas/Carla y Miguel/sesion/Preparativos-5.jpg",
+    alt: "Preparativos-5",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-5",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "Preparativos-7",
+    src: "/bodas/Carla y Miguel/sesion/Preparativos-7.jpg",
+    alt: "Preparativos-7",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "Preparativos-7",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "SesionAparte0004",
+    src: "/bodas/Carla y Miguel/sesion/SesionAparte0004.jpg",
+    alt: "SesionAparte0004",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "SesionAparte0004",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "SesionAparte0005",
+    src: "/bodas/Carla y Miguel/sesion/SesionAparte0005.jpg",
+    alt: "SesionAparte0005",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "SesionAparte0005",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "SesionAparte0006",
+    src: "/bodas/Carla y Miguel/sesion/SesionAparte0006.jpg",
+    alt: "SesionAparte0006",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "SesionAparte0006",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "SesionAparte0009",
+    src: "/bodas/Carla y Miguel/sesion/SesionAparte0009.jpg",
+    alt: "SesionAparte0009",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "SesionAparte0009",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "SesionAparte0010",
+    src: "/bodas/Carla y Miguel/sesion/SesionAparte0010.jpg",
+    alt: "SesionAparte0010",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "SesionAparte0010",
+    subFolder: "Carla y Miguel",
+    tags: ["sesion"]
   }
 ];
