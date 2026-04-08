@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
-import { useState } from 'react';
 
 // --- CONFIGURACIÓN DEL CARRUSEL PRINCIPAL ---
 const heroSlides = [
@@ -43,27 +42,16 @@ export default function HomePage() {
               {heroSlides.map((slide, index) => (
                 <CarouselItem key={index} className="pl-0">
                   <div className="relative w-full h-screen bg-foreground">
-                    {/* Fondo desenfocado */}
-                    <Image
-                      src={slide.src}
-                      alt=""
-                      fill
-                      sizes="100vw"
-                      quality={60}
-                      className="object-cover blur-2xl brightness-50"
-                      aria-hidden="true"
-                      priority={true}
-                    />
                     {/* Imagen principal */}
                     <Image
                       src={slide.src}
                       alt={slide.alt}
                       fill
                       sizes="100vw"
-                      quality={100}
+                      quality={82}
                       className="object-cover 2xl:object-contain"
                       data-ai-hint={slide.dataAiHint}
-                      priority={true}
+                      priority={index === 0}
                     />
                   </div>
                 </CarouselItem>
@@ -161,7 +149,7 @@ export default function HomePage() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover rounded-lg"
                     data-ai-hint="wedding story"
-                    quality={95}
+                    quality={80}
                     loading="lazy"
                     placeholder="blur"
                     blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg=="

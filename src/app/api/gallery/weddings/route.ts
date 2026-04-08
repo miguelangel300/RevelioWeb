@@ -26,7 +26,14 @@ export async function GET() {
     const bodasDir = path.join(process.cwd(), "public", "bodas");
 
     if (!fs.existsSync(bodasDir)) {
-      return NextResponse.json({ weddings: [] });
+      return NextResponse.json(
+        { weddings: [] },
+        {
+          headers: {
+            "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+          },
+        },
+      );
     }
 
     const weddingFolders = fs
@@ -107,7 +114,14 @@ export async function GET() {
         };
       });
 
-    return NextResponse.json({ weddings: weddingFolders });
+    return NextResponse.json(
+      { weddings: weddingFolders },
+      {
+        headers: {
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+        },
+      },
+    );
   } catch (error) {
     console.error("Error leyendo carpeta bodas:", error);
     return NextResponse.json(

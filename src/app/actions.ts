@@ -151,8 +151,10 @@ Enviado desde el formulario de contacto de reveliophotography.es
 
     // Extra debug: log whether the main info address was accepted or rejected
     try {
-      const accepted: string[] = info.accepted || [];
-      const rejected: string[] = info.rejected || [];
+      const toStringAddress = (value: string | { address?: string }) =>
+        typeof value === 'string' ? value : value.address || '';
+      const accepted = (info.accepted || []).map(toStringAddress);
+      const rejected = (info.rejected || []).map(toStringAddress);
       if (accepted.includes('info@reveliophotography.es')) {
         console.log('La dirección info@reveliophotography.es fue ACCEPTED por el servidor SMTP');
       } else if (rejected.includes('info@reveliophotography.es')) {
@@ -168,25 +170,31 @@ Enviado desde el formulario de contacto de reveliophotography.es
       success: true,
       message: "¡Gracias por vuestro mensaje! Me pondré en contacto con vosotros muy pronto.",
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorDetails = error instanceof Error ? error : new Error('Error desconocido');
+    const smtpError = errorDetails as Error & {
+      code?: string;
+      command?: string;
+      response?: string;
+    };
     console.error('=== ERROR DETALLADO DEL ENVÍO DE EMAIL ===');
-    console.error('Tipo de error:', error.name);
-    console.error('Mensaje de error:', error.message);
-    console.error('Código de error:', error.code);
-    console.error('Comando:', error.command);
-    console.error('Respuesta del servidor:', error.response);
+    console.error('Tipo de error:', errorDetails.name);
+    console.error('Mensaje de error:', errorDetails.message);
+    console.error('Código de error:', smtpError.code);
+    console.error('Comando:', smtpError.command);
+    console.error('Respuesta del servidor:', smtpError.response);
     
-    if (error.code === 'EAUTH') {
+    if (smtpError.code === 'EAUTH') {
       console.error('Error de autenticación - Verifica las credenciales');
-    } else if (error.code === 'ESOCKET') {
+    } else if (smtpError.code === 'ESOCKET') {
       console.error('Error de conexión - Verifica la configuración del servidor SMTP');
     }
     
-    console.error('Stack trace:', error.stack);
+    console.error('Stack trace:', errorDetails.stack);
     
     return {
       success: false,
-      message: `Error al enviar el mensaje: ${error.message || 'Error desconocido'}. Por favor, inténtalo de nuevo más tarde.`,
+      message: `Error al enviar el mensaje: ${errorDetails.message || 'Error desconocido'}. Por favor, inténtalo de nuevo más tarde.`,
     };
   }
 }

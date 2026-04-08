@@ -1,7 +1,27 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Heart, PawPrint, Quote } from 'lucide-react';
+import { PawPrint, Quote } from 'lucide-react';
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/site';
+
+export const metadata: Metadata = {
+  title: 'Sobre Nosotros | Revelio Photography',
+  description:
+    'Conoce a Revelio Photography: fotografos de bodas en Sevilla con enfoque documental, natural y artistico.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'Sobre Nosotros | Revelio Photography',
+    description:
+      'Conoce a Revelio Photography: fotografos de bodas en Sevilla con enfoque documental, natural y artistico.',
+    url: `${siteConfig.siteUrl}/about`,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: 'website',
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -86,7 +106,7 @@ export default function AboutPage() {
               </div>
               <div className="bg-muted/90 p-8 rounded-lg border-l-4 border-primary">
                 <p className="font-serif italic text-lg text-foreground leading-relaxed">
-                  "Desde el perro que lleva los anillos hasta el gato que observa desde la ventana, cada gesto de vuestros compañeros peludos es una pincelada más en el lienzo de vuestros recuerdos."
+                  &quot;Desde el perro que lleva los anillos hasta el gato que observa desde la ventana, cada gesto de vuestros compañeros peludos es una pincelada más en el lienzo de vuestros recuerdos.&quot;
                 </p>
                 <div className="mt-6 flex items-center gap-2 text-primary font-sans text-xs uppercase tracking-widest font-bold">
                   <PawPrint className="w-4 h-4" />
@@ -111,7 +131,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-4 text-center relative z-10 flex flex-col items-center">
           <Quote className="w-8 h-8 opacity-50 mb-6 text-primary-foreground fill-current" />
           <p className="font-serif text-2xl md:text-3xl italic font-light leading-relaxed mb-8">
-            "Revelio no solo hizo fotos increíbles, sino que nos hizo sentir cómodos en todo momento. Capturaron emociones que ni sabíamos que estábamos mostrando. El mejor recuerdo de nuestra vida."
+            &quot;Revelio no solo hizo fotos increíbles, sino que nos hizo sentir cómodos en todo momento. Capturaron emociones que ni sabíamos que estábamos mostrando. El mejor recuerdo de nuestra vida.&quot;
           </p>
           <div className="flex items-center justify-center gap-4">
             <div className="h-px w-12 bg-primary-foreground/50"></div>

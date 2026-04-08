@@ -29,6 +29,20 @@ interface WeddingInfo {
   imageCount: number;
 }
 
+// Orden cronológico lógico para las subcarpetas de una boda, igual que en el backend
+const PREDEFINED_TAG_ORDER = [
+  "todas",
+  "preparacion",
+  "ceremonia",
+  "sesion",
+  "coctel",
+  "banquete",
+  "barralibre",
+  "fiesta",
+  "postboda",
+  "preboda"
+];
+
 const GalleryDialogContext = createContext<(index: number) => void>(() => { });
 
 // Componente para una tarjeta de foto individual
@@ -159,20 +173,6 @@ export default function GalleryClientPage() {
   const currentWeddingTags = selectedWedding
     ? weddings.find(w => w.name === selectedWedding)?.tags || []
     : [];
-
-  // Orden cronológico lógico para las subcarpetas de una boda, igual que en el backend
-  const PREDEFINED_TAG_ORDER = [
-    "todas",
-    "preparacion",
-    "ceremonia",
-    "sesion",
-    "coctel",
-    "banquete",
-    "barralibre",
-    "fiesta",
-    "postboda",
-    "preboda"
-  ];
 
   const filteredPhotos = React.useMemo(() => {
     const filtered = galleryPhotos.filter(photo => {

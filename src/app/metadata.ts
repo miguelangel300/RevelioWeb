@@ -1,17 +1,18 @@
 import { Metadata } from 'next'
+import { siteConfig } from '@/lib/site'
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://reveliophotography.es'
+const baseUrl = siteConfig.siteUrl
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: 'Revelio Photography - Fotografía de Bodas con Alma',
-  description: 'Capturamos momentos únicos y especiales en tu boda. Fotografía documental y artística para bodas en Sevilla y toda España.',
+  title: siteConfig.title,
+  description: siteConfig.description,
   openGraph: {
-    title: 'Revelio Photography - Fotografía de Bodas con Alma',
-    description: 'Capturamos momentos únicos y especiales en tu boda. Fotografía documental y artística para bodas en Sevilla y toda España.',
+    title: siteConfig.title,
+    description: siteConfig.description,
     url: baseUrl,
-    siteName: 'Revelio Photography',
-    locale: 'es_ES',
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
     type: 'website',
   },
   robots: {

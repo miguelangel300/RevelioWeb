@@ -1,6 +1,26 @@
 import BookingForm from '@/components/contact/BookingForm';
-import { MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react';
+import { MapPin, Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+import { siteConfig } from '@/lib/site';
+
+export const metadata: Metadata = {
+  title: 'Contacto | Revelio Photography',
+  description:
+    'Contacta con Revelio Photography para tu boda en Sevilla o cualquier punto de Espana. Respuesta rapida y presupuesto personalizado.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contacto | Revelio Photography',
+    description:
+      'Contacta con Revelio Photography para tu boda en Sevilla o cualquier punto de Espana. Respuesta rapida y presupuesto personalizado.',
+    url: `${siteConfig.siteUrl}/contact`,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
+    type: 'website',
+  },
+};
 
 const contactInfo = {
   displayPhone: "698480039 // 652408441 // 601370069",
@@ -31,7 +51,7 @@ export default function ContactPage() {
             Hablemos de Vuestra Historia
           </h1>
           <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed font-serif">
-            Cada gran aventura comienza con un simple "Nuestra boda es ..." <br />Estamos deseando conocer los detalles de vuestro gran día.
+            Cada gran aventura comienza con un simple &quot;Nuestra boda es ...&quot; <br />Estamos deseando conocer los detalles de vuestro gran día.
           </p>
         </div>
       </header>

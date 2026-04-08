@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
+import { siteConfig } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = 'https://www.reveliophotography.com';
+  const siteUrl = siteConfig.siteUrl;
 
   // Rutas estáticas
   return [
@@ -15,8 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/accessibility-statement',
   ].map((route) => ({
     url: `${siteUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly' as 'weekly',
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
     priority: route === '/' ? 1 : 0.8,
   }));
 }

@@ -9,10 +9,12 @@ import FloatingWhatsAppButton from '@/components/layout/FloatingWhatsAppButton';
 import CookieConsentBanner from '@/components/layout/CookieConsentBanner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
+import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Fotógrafos de Bodas en Sevilla | Revelio Weddings',
-  description: 'Fotografía de bodas en Sevilla y Andalucía, natural, sin poses forzadas, para parejas auténticas (¡y sus mascotas!). Capturamos la emoción real, la fiesta y los mejores momentos de vuestro gran día. Vivid vuestra boda, nosotros la contamos en imágenes.',
+  metadataBase: new URL(siteConfig.siteUrl),
+  title: siteConfig.title,
+  description: siteConfig.description,
   keywords: [
     'fotógrafo de bodas Sevilla',
     'fotografía de bodas Sevilla',
@@ -31,9 +33,9 @@ export const metadata: Metadata = {
     'fotógrafo bodas naturales Sevilla',
   ],
   openGraph: {
-    title: 'Fotógrafos de Bodas en Sevilla | Revelio Weddings',
-    description: 'Fotografía de bodas natural y divertida en Sevilla y Andalucía. Sin poses, sin artificios, solo verdad. Capturamos la emoción, la fiesta y a todos (¡mascotas incluidas!).',
-    url: 'https://revelioweddings.com',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteConfig.siteUrl,
     type: 'website',
     images: [
       {
@@ -43,17 +45,21 @@ export const metadata: Metadata = {
         alt: 'Revelio Weddings - Fotógrafos de bodas en Sevilla',
       },
     ],
-    locale: 'es_ES',
-    siteName: 'Revelio Weddings',
+    locale: siteConfig.locale,
+    siteName: siteConfig.name,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fotógrafos de Bodas en Sevilla | Revelio Weddings',
-    description: 'Fotografía de bodas natural y divertida en Sevilla y Andalucía. Sin poses, sin artificios, solo verdad. Capturamos la emoción, la fiesta y a todos (¡mascotas incluidas!).',
+    title: siteConfig.title,
+    description: siteConfig.description,
     images: ['/logoRevelio completo sin fondo.png'],
   },
   alternates: {
-    canonical: 'https://revelioweddings.com',
+    canonical: '/',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
