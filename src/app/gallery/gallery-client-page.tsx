@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import { galleryPhotos } from '@/data/gallery';
 import React, { useState, useEffect, createContext, useContext, useCallback } from 'react';
 import { Masonry } from 'masonic';
 import { useWindowSize } from '@/hooks/use-window-size';
@@ -8,6 +7,7 @@ import type { Photo } from '@/types';
 import { AnimatePresence, motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { X, ArrowLeft, Camera } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 import {
   Dialog,
@@ -29,21 +29,8 @@ interface WeddingInfo {
   imageCount: number;
 }
 
-// Orden cronológico lógico para las subcarpetas de una boda, igual que en el backend
-const PREDEFINED_TAG_ORDER = [
-  "todas",
-  "preparacion",
-  "ceremonia",
-  "sesion",
-  "coctel",
-  "banquete",
-  "barralibre",
-  "fiesta",
-  "postboda",
-  "preboda"
-];
-
 const GalleryDialogContext = createContext<(index: number) => void>(() => { });
+const PHOTOS_PAGE_SIZE = 72;
 
 // Componente para una tarjeta de foto individual
 const PhotoCard = ({ data: photo, index }: { data: Photo, index: number }) => {
@@ -135,6 +122,12 @@ export default function GalleryClientPage() {
   const [selectedWedding, setSelectedWedding] = useState<string | null>(null);
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [loadingWeddings, setLoadingWeddings] = useState(false);
+  const [photos, setPhotos] = useState<Photo[]>([]);
+  const [loadingPhotos, setLoadingPhotos] = useState(false);
+  const [loadingMorePhotos, setLoadingMorePhotos] = useState(false);
+  const [hasMorePhotos, setHasMorePhotos] = useState(false);
+  const [nextOffset, setNextOffset] = useState(0);
+  const loadMoreSentinelRef = React.useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -159,11 +152,16 @@ export default function GalleryClientPage() {
   const handleSelectWedding = useCallback((weddingName: string) => {
     setSelectedWedding(weddingName);
     setActiveTag(null); // Reset tag, mostrará "todas" por defecto
+    setSelectedIndex(null);
   }, []);
 
   const handleBackToWeddings = useCallback(() => {
     setSelectedWedding(null);
     setActiveTag(null);
+    setPhotos([]);
+    setHasMorePhotos(false);
+    setNextOffset(0);
+    setSelectedIndex(null);
   }, []);
 
   const { width } = useWindowSize();
@@ -174,41 +172,118 @@ export default function GalleryClientPage() {
     ? weddings.find(w => w.name === selectedWedding)?.tags || []
     : [];
 
-  const filteredPhotos = React.useMemo(() => {
-    const filtered = galleryPhotos.filter(photo => {
-      // Filtrar siempre por la categoría Bodas
-      if (photo.category !== 'Bodas') return false;
-
-      // Filtrar por boda seleccionada y su tag
-      if (selectedWedding) {
-        if (photo.subFolder !== selectedWedding) return false;
-
-        if (activeTag && activeTag !== 'todas') {
-          if (!photo.tags || !photo.tags.includes(activeTag)) return false;
-        }
-      }
-      return true;
-    });
-
-    // Ordenar fotos de la vista "todas" cronológicamente según PREDEFINED_TAG_ORDER
-    if (selectedWedding && (!activeTag || activeTag === 'todas')) {
-      return [...filtered].sort((a, b) => {
-        const getTagIndex = (tags?: string[]) => {
-          if (!tags || tags.length === 0) return 999;
-          const indices = tags.map(t => {
-            const idx = PREDEFINED_TAG_ORDER.indexOf(t.toLowerCase());
-            return idx === -1 ? 999 : idx;
-          });
-          return Math.min(...indices);
-        };
-        const indexA = getTagIndex(a.tags);
-        const indexB = getTagIndex(b.tags);
-        return indexA - indexB;
-      });
+  useEffect(() => {
+    if (!selectedWedding) {
+      setPhotos([]);
+      setHasMorePhotos(false);
+      setNextOffset(0);
+      return;
     }
 
-    return filtered;
+    const controller = new AbortController();
+    const fetchInitialPhotos = async () => {
+      setLoadingPhotos(true);
+      try {
+        const params = new URLSearchParams({
+          wedding: selectedWedding,
+          offset: '0',
+          limit: String(PHOTOS_PAGE_SIZE),
+        });
+        if (activeTag && activeTag !== 'todas') {
+          params.set('tag', activeTag);
+        }
+
+        const res = await fetch(`/api/gallery/photos?${params.toString()}`, {
+          signal: controller.signal,
+        });
+        const data = await res.json();
+        const newPhotos: Photo[] = Array.isArray(data.photos) ? data.photos : [];
+        setPhotos(newPhotos);
+        setHasMorePhotos(Boolean(data.hasMore));
+        setNextOffset(typeof data.nextOffset === 'number' ? data.nextOffset : newPhotos.length);
+      } catch (error) {
+        if ((error as Error).name !== 'AbortError') {
+          console.error('Error cargando fotos:', error);
+          setPhotos([]);
+          setHasMorePhotos(false);
+          setNextOffset(0);
+        }
+      } finally {
+        setLoadingPhotos(false);
+      }
+    };
+
+    setSelectedIndex(null);
+    fetchInitialPhotos();
+
+    return () => controller.abort();
   }, [activeTag, selectedWedding]);
+
+  const handleLoadMorePhotos = useCallback(async () => {
+    if (!selectedWedding || loadingMorePhotos || !hasMorePhotos) {
+      return;
+    }
+
+    setLoadingMorePhotos(true);
+    try {
+      const params = new URLSearchParams({
+        wedding: selectedWedding,
+        offset: String(nextOffset),
+        limit: String(PHOTOS_PAGE_SIZE),
+      });
+      if (activeTag && activeTag !== 'todas') {
+        params.set('tag', activeTag);
+      }
+
+      const res = await fetch(`/api/gallery/photos?${params.toString()}`);
+      const data = await res.json();
+      const newPhotos: Photo[] = Array.isArray(data.photos) ? data.photos : [];
+
+      setPhotos((prev) => {
+        if (newPhotos.length === 0) {
+          return prev;
+        }
+        const existingIds = new Set(prev.map((photo) => photo.id));
+        const deduped = newPhotos.filter((photo) => !existingIds.has(photo.id));
+        return [...prev, ...deduped];
+      });
+
+      setHasMorePhotos(Boolean(data.hasMore));
+      setNextOffset(typeof data.nextOffset === 'number' ? data.nextOffset : nextOffset + newPhotos.length);
+    } catch (error) {
+      console.error('Error cargando más fotos:', error);
+    } finally {
+      setLoadingMorePhotos(false);
+    }
+  }, [activeTag, hasMorePhotos, loadingMorePhotos, nextOffset, selectedWedding]);
+
+  useEffect(() => {
+    if (!selectedWedding || !hasMorePhotos || loadingPhotos || loadingMorePhotos) {
+      return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      return;
+    }
+
+    const sentinel = loadMoreSentinelRef.current;
+    if (!sentinel) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const firstEntry = entries[0];
+        if (firstEntry?.isIntersecting) {
+          handleLoadMorePhotos();
+        }
+      },
+      { rootMargin: '320px 0px' },
+    );
+
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [handleLoadMorePhotos, hasMorePhotos, loadingMorePhotos, loadingPhotos, photos.length, selectedWedding]);
 
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24">
@@ -315,18 +390,39 @@ export default function GalleryClientPage() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
           >
-            {isClient ? (
-              <GalleryDialogContext.Provider value={setSelectedIndex}>
-                <Masonry
-                  key={`bodas-${selectedWedding || 'all'}-${activeTag || 'all'}`}
-                  items={filteredPhotos}
-                  columnGutter={24}
-                  columnCount={columnCount}
-                  render={PhotoCard}
-                />
-              </GalleryDialogContext.Provider>
-            ) : (
+            {loadingPhotos ? (
               <div className="w-full h-96 flex items-center justify-center text-muted-foreground">Cargando galería...</div>
+            ) : !isClient ? (
+              <div className="w-full h-96 flex items-center justify-center text-muted-foreground">Cargando galería...</div>
+            ) : photos.length === 0 ? (
+              <div className="w-full h-96 flex items-center justify-center text-muted-foreground">No hay fotos disponibles para este filtro.</div>
+            ) : (
+              <div className="space-y-8">
+                <GalleryDialogContext.Provider value={setSelectedIndex}>
+                  <Masonry
+                    key={`bodas-${selectedWedding || 'all'}-${activeTag || 'all'}`}
+                    items={photos}
+                    columnGutter={24}
+                    columnCount={columnCount}
+                    render={PhotoCard}
+                  />
+                </GalleryDialogContext.Provider>
+
+                {hasMorePhotos && (
+                  <div className="flex flex-col items-center gap-3">
+                    <div ref={loadMoreSentinelRef} className="h-1 w-full" aria-hidden="true" />
+                    <Button
+                      type="button"
+                      variant="default"
+                      size="lg"
+                      onClick={handleLoadMorePhotos}
+                      disabled={loadingMorePhotos}
+                    >
+                      {loadingMorePhotos ? 'Cargando más fotos...' : 'Ver más fotos'}
+                    </Button>
+                  </div>
+                )}
+              </div>
             )}
           </motion.div>
         )}
@@ -352,7 +448,7 @@ export default function GalleryClientPage() {
               className="w-full h-full relative flex items-center justify-center [&_.overflow-hidden]:w-full [&_.overflow-hidden]:h-full"
             >
               <CarouselContent className="h-full ml-0">
-                {filteredPhotos.map((photo, index) => (
+                {photos.map((photo, index) => (
                   <CarouselItem
                     key={photo.id}
                     className="h-full w-full flex items-center justify-center pl-0 cursor-pointer"
@@ -368,8 +464,8 @@ export default function GalleryClientPage() {
                         className="object-contain max-h-[90vh] sm:max-h-[95vh] w-auto max-w-full cursor-default"
                         width={1200}
                         height={800}
-                        quality={100}
-                        priority={Math.abs(selectedIndex - index) <= 1}
+                        quality={85}
+                        priority={selectedIndex === index}
                       />
                       <CarouselPrevious
                         className="absolute left-2 sm:-left-8 lg:-left-12 bg-transparent hover:bg-transparent border-none text-white/50 hover:text-white w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 flex [&>svg]:!w-12 [&>svg]:!h-12 sm:[&>svg]:!w-16 sm:[&>svg]:!h-16 lg:[&>svg]:!w-24 lg:[&>svg]:!h-24 transition-colors z-[70] shadow-none"

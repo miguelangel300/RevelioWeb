@@ -7,8 +7,7 @@ import Footer from '@/components/layout/Footer';
 import { Toaster } from "@/components/ui/toaster";
 import FloatingWhatsAppButton from '@/components/layout/FloatingWhatsAppButton';
 import CookieConsentBanner from '@/components/layout/CookieConsentBanner';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
+import AnalyticsGate from '@/components/layout/AnalyticsGate';
 import { siteConfig } from '@/lib/site';
 
 export const metadata: Metadata = {
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/logoRevelio completo sin fondo.png',
-        width: 800,
+        width: 1000,
         height: 600,
         alt: 'Revelio Weddings - Fotógrafos de bodas en Sevilla',
       },
@@ -82,8 +81,7 @@ export default function RootLayout({
         <Footer />
         <FloatingWhatsAppButton />
         <Toaster />
-        <Analytics />
-        <SpeedInsights />
+        <AnalyticsGate />
       </body>
     </html>
   );
