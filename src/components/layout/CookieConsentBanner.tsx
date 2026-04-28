@@ -6,6 +6,8 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Cookie, X } from 'lucide-react';
 
+const CONSENT_EVENT = 'cookie-consent-updated';
+
 export default function CookieConsentBanner() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -18,6 +20,7 @@ export default function CookieConsentBanner() {
 
   const handleAccept = () => {
     localStorage.setItem('cookie_consent', 'true');
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setIsVisible(false);
   };
 
@@ -27,6 +30,7 @@ export default function CookieConsentBanner() {
     // between explicit acceptance and just closing the banner.
     // For simplicity, we'll treat closing as acceptance for now.
     localStorage.setItem('cookie_consent', 'true');
+    window.dispatchEvent(new Event(CONSENT_EVENT));
     setIsVisible(false);
   };
 

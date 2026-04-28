@@ -3,8 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Heart } from 'lucide-react';
+import { ArrowRight, Camera, Handshake, Heart, Images } from 'lucide-react';
 import {
+  type CarouselApi,
   Carousel,
   CarouselContent,
   CarouselItem,
@@ -14,9 +15,24 @@ import * as React from "react";
 
 // --- CONFIGURACIÓN DEL CARRUSEL PRINCIPAL ---
 const heroSlides = [
-  { src: '/_DMA7595.jpg', alt: 'Foto de boda de alta calidad 3', dataAiHint: 'foto boda' },
-  { src: '/IMG_8687.jpg', alt: 'Foto de boda de alta calidad 1', dataAiHint: 'foto boda' },
-  { src: '/IMG_3153.jpg', alt: 'Foto de boda de alta calidad 2', dataAiHint: 'foto boda' },
+  {
+    src: '/_DMA7595.jpg',
+    alt: 'Foto de boda de alta calidad 3',
+    dataAiHint: 'foto boda',
+    caption: 'Respuesta en menos de 24h',
+  },
+  {
+    src: '/IMG_8687.jpg',
+    alt: 'Foto de boda de alta calidad 1',
+    dataAiHint: 'foto boda',
+    caption: 'Cobertura en Sevilla y destino',
+  },
+  {
+    src: '/IMG_3153.jpg',
+    alt: 'Foto de boda de alta calidad 2',
+    dataAiHint: 'foto boda',
+    caption: 'Entrega completa en 3-6 semanas',
+  },
 ];
 
 
@@ -25,6 +41,27 @@ export default function HomePage() {
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
+  const [carouselApi, setCarouselApi] = React.useState<CarouselApi>();
+  const [activeSlideIndex, setActiveSlideIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!carouselApi) {
+      return;
+    }
+
+    const onSelect = () => {
+      setActiveSlideIndex(carouselApi.selectedScrollSnap());
+    };
+
+    onSelect();
+    carouselApi.on('select', onSelect);
+    carouselApi.on('reInit', onSelect);
+
+    return () => {
+      carouselApi.off('select', onSelect);
+      carouselApi.off('reInit', onSelect);
+    };
+  }, [carouselApi]);
 
 
 
@@ -36,6 +73,7 @@ export default function HomePage() {
           <Carousel
             plugins={[plugin.current]}
             opts={{ loop: true }}
+            setApi={setCarouselApi}
             className="w-full h-full"
           >
             <CarouselContent className="-ml-0">
@@ -49,7 +87,7 @@ export default function HomePage() {
                       fill
                       sizes="100vw"
                       quality={82}
-                      className="object-cover 2xl:object-contain"
+                      className="object-cover "
                       data-ai-hint={slide.dataAiHint}
                       priority={index === 0}
                     />
@@ -69,11 +107,17 @@ export default function HomePage() {
           <p className="text-lg md:text-xl text-primary-foreground/90">
             Contamos vuestra historia a través de imágenes que perduran.
           </p>
-          <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-            <Link href="/contact">
-              Hablemos de vuestra boda <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto">
+              <Link href="/contact">
+                Hablemos de vuestra boda <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          
+          </div>
+          <p className="pt-2 text-lg md:text-xl font-serif italic text-primary-foreground/85">
+            {heroSlides[activeSlideIndex]?.caption}
+          </p>
         </div>
       </section>
 
@@ -108,6 +152,59 @@ export default function HomePage() {
               data-ai-hint="photographer portrait team"
               quality={95}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-24 sm:py-28 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/bodas/Marta y Alejandro/ceremonia/DMA-95.jpg"
+            alt="Fondo sección proceso"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <h2 className="text-4xl font-serif font-semibold text-primary-foreground mb-4">Nuestro proceso, sin complicaciones</h2>
+            <p className="text-lg text-primary-foreground/90">
+              Queremos que viváis vuestra boda, no que poséis todo el día. Así trabajamos para que todo fluya natural.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <article className="bg-muted/90 p-8 rounded-lg border-l-4 border-primary shadow-xl">
+              <p className="text-xs uppercase tracking-widest text-primary mb-3">Paso 1</p>
+              <h3 className="text-2xl font-serif text-primary mb-3">Nos conocemos</h3>
+              <p className="font-serif italic text-lg text-foreground leading-relaxed">Hablamos de vuestro día, estilo y prioridades para diseñar un reportaje alineado con vuestra historia.</p>
+              <div className="mt-6 flex items-center gap-2 text-primary font-sans text-xs uppercase tracking-widest font-bold">
+                <Handshake className="w-4 h-4" />
+                <span>Conexión y confianza</span>
+              </div>
+            </article>
+            <article className="bg-muted/90 p-8 rounded-lg border-l-4 border-primary shadow-xl">
+              <p className="text-xs uppercase tracking-widest text-primary mb-3">Paso 2</p>
+              <h3 className="text-2xl font-serif text-primary mb-3">Documentamos todo</h3>
+              <p className="font-serif italic text-lg text-foreground leading-relaxed">Capturamos emociones reales con enfoque documental, desde los preparativos hasta la última canción.</p>
+              <div className="mt-6 flex items-center gap-2 text-primary font-sans text-xs uppercase tracking-widest font-bold">
+                <Camera className="w-4 h-4" />
+                <span>Fotografía documental</span>
+              </div>
+            </article>
+            <article className="bg-muted/90 p-8 rounded-lg border-l-4 border-primary shadow-xl">
+              <p className="text-xs uppercase tracking-widest text-primary mb-3">Paso 3</p>
+              <h3 className="text-2xl font-serif text-primary mb-3">Entregamos recuerdos</h3>
+              <p className="font-serif italic text-lg text-foreground leading-relaxed">Recibís un adelanto en la primera semana y la galería final editada en 3-6 semanas.</p>
+              <div className="mt-6 flex items-center gap-2 text-primary font-sans text-xs uppercase tracking-widest font-bold">
+                <Images className="w-4 h-4" />
+                <span>Galería final cuidada</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>

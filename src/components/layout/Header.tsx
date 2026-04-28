@@ -20,7 +20,7 @@ const Logo = ({ className }: { className?: string }) => (
     alt="Logo Revelio"
     width={160}
     height={53}
-    className={cn("h-14 w-auto", className)}
+    className={cn("h-14 w-auto origin-left scale-110 md:scale-125 transform-gpu", className)}
     priority
   />
 );
@@ -30,6 +30,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const isHomePage = pathname === '/';
+  const isContactPage = pathname === '/contact';
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +74,7 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               <Logo className={cn(
                 "transition-all duration-300",
-                isHomePage && !isScrolled && !isMenuOpen ? "brightness-0 invert" : ""
+                (isHomePage && !isScrolled && !isMenuOpen) || isContactPage ? "brightness-0 invert" : ""
               )} />
             </Link>
           </div>
