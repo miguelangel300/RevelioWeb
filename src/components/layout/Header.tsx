@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const navItems = [
   { href: '/', label: 'Inicio' },
-  { href: '/about', label: 'Sobre Nosotros' },
+ { href: '/about', label: 'Sobre Nosotros' },
   { href: '/gallery', label: 'Galería' },
   { href: '/contact', label: 'Contacto' },
 ];

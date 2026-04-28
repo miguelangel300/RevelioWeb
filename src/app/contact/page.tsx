@@ -1,8 +1,10 @@
 import BookingForm from '@/components/contact/BookingForm';
-import { MapPin, Mail, Phone, Link, Heart, MessageCircleHeart } from 'lucide-react';
+import { MapPin, Mail, Phone, MessageCircleHeart } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/site';
+
 
 export const metadata: Metadata = {
   title: 'Contacto | Revelio Photography',
@@ -134,13 +136,7 @@ export default function ContactPage() {
               <h4 className="font-serif text-xl font-bold mb-3 text-primary">¿Realizáis sesiones de preboda o postboda?</h4>
               <p className="text-muted-foreground text-sm leading-relaxed font-sans">¡Sí! Son sesiones maravillosas para que os sintáis cómodos frente a la cámara antes del gran día "preboda" o para volver a poneros vuestros trajes en un entorno natural y relajado sin el estrés de la boda "postboda".</p>
             </div>
-              <Link
-              href="/about"
-              className="inline-flex items-center text-primary border-b border-primary pb-1 hover:text-primary/80 transition-colors uppercase text-sm tracking-widest font-sans font-medium mt-4"
-            >
-              Conoced nuestra filosofía
-              <MessageCircleHeart className="ml-2 w-4 h-4" />
-            </Link>
+         
           </div>
            
         </div>

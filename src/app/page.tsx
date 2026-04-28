@@ -17,21 +17,21 @@ import * as React from "react";
 const heroSlides = [
   {
     src: '/_DMA7595.jpg',
-    alt: 'Foto de boda de alta calidad 3',
+    alt: 'Fotografia de bodas en Sevilla, abrazo con luz natural',
     dataAiHint: 'foto boda',
     caption: 'Respuesta en menos de 24h',
   },
   {
     src: '/IMG_8687.jpg',
-    alt: 'Foto de boda de alta calidad 1',
+    alt: 'Pareja de boda en Andalucia, estilo documental sin poses',
     dataAiHint: 'foto boda',
     caption: 'Cobertura en Sevilla y destino',
   },
   {
     src: '/IMG_3153.jpg',
-    alt: 'Foto de boda de alta calidad 2',
+    alt: 'Fiesta de boda con alma, celebracion en Sevilla',
     dataAiHint: 'foto boda',
-    caption: 'Entrega completa en 3-6 semanas',
+    caption: 'Entrega completa en 2-6 semanas',
   },
 ];
 
@@ -134,6 +134,9 @@ export default function HomePage() {
             <p className="text-lg text-foreground/80 leading-relaxed mb-8">
               Buscamos la luz perfecta, el gesto inadvertido, la lágrima de alegría. Nuestro enfoque es documental y artístico, permitiendo que vuestro día fluya con naturalidad mientras nos encargamos de inmortalizar cada instante.
             </p>
+            <p className="text-lg text-foreground/80 leading-relaxed mb-8">
+              Como Revelio Photography, nos mueve una fotografia de bodas con alma que respire verdad. Trabajamos en Sevilla y en toda Andalucia con cercania, para que cada pareja se sienta acompañada y libre de poses forzadas.
+            </p>
             <Link
               href="/about"
               className="inline-flex items-center text-primary border-b border-primary pb-1 hover:text-primary/80 transition-colors uppercase text-sm tracking-widest font-sans font-medium mt-4"
@@ -161,7 +164,7 @@ export default function HomePage() {
         <div className="absolute inset-0">
           <Image
             src="/bodas/Marta y Alejandro/ceremonia/DMA-95.jpg"
-            alt="Fondo sección proceso"
+            alt="Ceremonia de boda en Sevilla con luz natural"
             fill
             sizes="100vw"
             className="object-cover"
@@ -174,8 +177,7 @@ export default function HomePage() {
             <h2 className="text-4xl font-serif font-semibold text-primary-foreground mb-4">Nuestro proceso, sin complicaciones</h2>
             <p className="text-lg text-primary-foreground/90">
               Queremos que viváis vuestra boda, no que poséis todo el día. Así trabajamos para que todo fluya natural.
-            </p>
-          </div>
+            </p>          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <article className="bg-muted/90 p-8 rounded-lg border-l-4 border-primary shadow-xl">
@@ -224,16 +226,19 @@ export default function HomePage() {
               {
                 img: "carrusel1.jpg",
                 couple: "Helen & Dani",
+                alt: "Boda de Helen y Dani en Sevilla, fotografia natural en verano",
                 description: "En pleno verano sevillano, Helen y Dani nos hicieron disfrutar con su complicidad y esa manera tan suya de mirarse. Su boda fue íntima, con un aire mediterráneo y llena de momentos que se vivieron a lo grande."
               },
               {
                 img: "_DMA6873.jpg",
                 couple: "Lola & Marcos",
+                alt: "Boda de Lola y Marcos en la nieve, reportaje sin poses forzadas",
                 description: "Lola y Marcos se dieron el 'sí' bajo un paisaje nevado. El contraste entre el frío y el amor de su gente nos regaló fotografías únicas. Una boda de invierno que fue pura magia, risas y baile."
               },
               {
                 img: "_DMA1102.jpg",
                 couple: "Florentino & Amor",
+                alt: "Celebracion de Florentino y Amor, fotografia con alma en familia",
                 description: "Florentino y Amor celebraron 50 años juntos con la misma ilusión de siempre. Fue un día entrañable, lleno de ternura y de momentos que reflejaban todo lo que han construido. Entre risas, miradas cómplices y la compañía de hijos y nietos, festejaron medio siglo de amor de verdad."
               }
             ].map((story, index) => (
@@ -241,7 +246,7 @@ export default function HomePage() {
                 <div className="block w-full aspect-[4/3] overflow-hidden rounded-lg shadow-xl mb-6 relative">
                   <Image
                     src={`/${story.img}`}
-                    alt={`Boda de ${story.couple}`}
+                    alt={story.alt}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover rounded-lg"
@@ -259,6 +264,13 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <Link
+            href="/gallery"
+            className="inline-flex items-center text-primary border-b border-primary pb-1 hover:text-primary/80 transition-colors uppercase text-sm tracking-widest font-sans font-medium mt-12"
+          >
+            Explorar mas historias
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </Link>
         </div>
       </section>
 
