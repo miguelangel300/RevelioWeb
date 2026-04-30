@@ -18,9 +18,9 @@ const Logo = ({ className }: { className?: string }) => (
   <Image
     src="/logoRevelio completo sin fondo.png"
     alt="Logo Revelio"
-    width={160}
+    width={163}
     height={53}
-    className={cn("h-14 w-auto origin-left scale-110 md:scale-125 transform-gpu", className)}
+    className={cn("h-6 md:h-8 w-auto origin-left transform-gpu", className)}
     priority
   />
 );
