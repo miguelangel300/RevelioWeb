@@ -210,7 +210,7 @@ export default function BookingForm() {
               <div className="space-y-1 leading-none">
                 <FormLabel className="text-sm font-medium text-foreground">Aceptación de Privacidad</FormLabel>
                 <FormDescription className="text-xs">
-                  He leído y acepto la <Link href="/privacy-policy" className="underline hover:text-primary" target="_blank">política de privacidad</Link>.
+                  He leído y acepto la <Link href="/politica-de-privacidad" className="underline hover:text-primary" target="_blank">política de privacidad</Link>.
                 </FormDescription>
                 <FormMessage />
               </div>

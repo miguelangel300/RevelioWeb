@@ -20,7 +20,7 @@
     --secondary-foreground: 354 80% 15%; /* Vino oscuro para texto sobre el secundario */
 
     --muted: 39 60% 92%; /* Versión más clara del fondo */
-    --muted-foreground: 35 20% 40%; /* Gris medio cálido para texto apagado / subtítulos */
+    --muted-foreground: 35 22% 33%; /* Gris medio cálido para texto apagado / subtítulos */
 
     --accent: 354 30% 70%; /* Color de acento derivado del principal */
     --accent-foreground: 354 44% 21%; /* #4c1e22 - Color principal (Vino Tinto) */

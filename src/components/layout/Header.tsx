@@ -9,18 +9,19 @@ import Image from 'next/image';
 
 const navItems = [
   { href: '/', label: 'Inicio' },
- { href: '/about', label: 'Sobre Nosotros' },
-  { href: '/gallery', label: 'Galería' },
-  { href: '/contact', label: 'Contacto' },
+ { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
+  { href: '/galeria', label: 'Galería' },
+  { href: '/precios', label: 'Packs' },
+  { href: '/contacto', label: 'Contacto' },
 ];
 
 const Logo = ({ className }: { className?: string }) => (
   <Image
     src="/logoRevelio completo sin fondo.png"
     alt="Logo Revelio"
-    width={160}
+    width={163}
     height={53}
-    className={cn("h-14 w-auto origin-left scale-110 md:scale-125 transform-gpu", className)}
+    className={cn("h-6 md:h-8 w-auto origin-left transform-gpu", className)}
     priority
   />
 );
@@ -30,7 +31,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const isHomePage = pathname === '/';
-  const isContactPage = pathname === '/contact';
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -58,7 +58,7 @@ export default function Header() {
     "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
     {
       "bg-transparent": isHomePage && !isScrolled && !isMenuOpen,
-      "bg-primary/20 backdrop-blur-lg shadow-md": !isHomePage || isScrolled,
+      "bg-primary/95 backdrop-blur-lg shadow-md": !isHomePage || isScrolled,
       "bg-primary/90 backdrop-blur-lg shadow-md": isMenuOpen,
     }
   );
@@ -72,10 +72,9 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <Logo className={cn(
-                "transition-all duration-300",
-                (isHomePage && !isScrolled && !isMenuOpen) || isContactPage ? "brightness-0 invert" : ""
-              )} />
+              {/* Blanco en todos los estados: el fondo del header es o la
+                  foto del hero o el vino solido, y el logo original es vino. */}
+              <Logo className="brightness-0 invert" />
             </Link>
           </div>
 
@@ -111,7 +110,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-primary/20 backdrop-blur-lg">
+        <div className="md:hidden bg-primary/95 backdrop-blur-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <Link

@@ -64,15 +64,11 @@ export async function POST() {
       const parts = relativePath.split("/").filter(Boolean);
       let category = "Bodas"; // Default
       let subFolder = "";
-      let title = id;
+      const title = id;
       const tags: string[] = [];
 
       if (parts.length > 1) {
         const potentialCategory = parts[0];
-        // Normalizar: "bodas" -> "Bodas"
-        const normalizedCategory =
-          potentialCategory.charAt(0).toUpperCase() +
-          potentialCategory.slice(1).toLowerCase();
         if (
           validCategories
             .map((c) => c.toLowerCase())

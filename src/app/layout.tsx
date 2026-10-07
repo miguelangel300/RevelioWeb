@@ -9,49 +9,28 @@ import FloatingWhatsAppButton from '@/components/layout/FloatingWhatsAppButton';
 import CookieConsentBanner from '@/components/layout/CookieConsentBanner';
 import AnalyticsGate from '@/components/layout/AnalyticsGate';
 import { siteConfig } from '@/lib/site';
+import JsonLd from '@/components/seo/JsonLd';
+import { getBusinessSchema } from '@/lib/schema';
+import MotionProvider from '@/components/motion/MotionProvider';
+import PageTransition from '@/components/motion/PageTransition';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: siteConfig.title,
   description: siteConfig.description,
-  keywords: [
-    'fotógrafo de bodas Sevilla',
-    'fotografía de bodas Sevilla',
-    'fotógrafo bodas natural',
-    'fotógrafo bodas mascotas',
-    'fotografía documental bodas',
-    'fotógrafo bodas Andalucía',
-    'fotografía boda espontánea',
-    'fotógrafo bodas sin poses',
-    'fotografía boda divertida',
-    'fotógrafo bodas originales',
-    'fotografía boda Sevilla',
-    'fotógrafo bodas con perros',
-    'fotógrafo bodas con gatos',
-    'fotografía boda fiesta',
-    'fotógrafo bodas naturales Sevilla',
-  ],
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
     url: siteConfig.siteUrl,
     type: 'website',
-    images: [
-      {
-        url: '/logoRevelio completo sin fondo.png',
-        width: 1000,
-        height: 600,
-        alt: 'Revelio Weddings - Fotógrafos de bodas en Sevilla',
-      },
-    ],
+    images: [siteConfig.ogImage],
     locale: siteConfig.locale,
     siteName: siteConfig.name,
   },
+  // Solo la tarjeta: asi cada pagina hereda su propio titulo y descripcion
+  // en vez de repetir los de la home al compartirse.
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
-    images: ['/logoRevelio completo sin fondo.png'],
   },
   alternates: {
     canonical: '/',
@@ -59,6 +38,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
 };
 
@@ -71,11 +57,21 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <JsonLd data={getBusinessSchema()} />
+        <noscript>
+          <style
+            dangerouslySetInnerHTML={{
+              __html: '[data-reveal]{opacity:1!important;transform:none!important}',
+            }}
+          />
+        </noscript>
       </head>
       <body className={`${greatVibes.variable} ${cormorantGaramond.variable} ${lato.variable} font-sans antialiased flex flex-col min-h-screen bg-background text-foreground`}>
         <Header />
         <main className="flex-grow">
-          {children}
+          <MotionProvider>
+            <PageTransition>{children}</PageTransition>
+          </MotionProvider>
         </main>
         <CookieConsentBanner />
         <Footer />

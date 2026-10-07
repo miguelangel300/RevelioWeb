@@ -4941,4 +4941,784 @@ export const galleryPhotos: Photo[] = [
     subFolder: "Carla y Miguel",
     tags: ["sesion"]
   }
+, 
+  {
+    id: "IMG_0996",
+    src: "/bodas/Paloma y Alejandro/barraLibre/IMG_0996.jpg",
+    alt: "IMG_0996",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0996",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_1000",
+    src: "/bodas/Paloma y Alejandro/barraLibre/IMG_1000.jpg",
+    alt: "IMG_1000",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1000",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_1008-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/barraLibre/IMG_1008-Mejorado-NR.jpg",
+    alt: "IMG_1008-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1008-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_1019",
+    src: "/bodas/Paloma y Alejandro/barraLibre/IMG_1019.jpg",
+    alt: "IMG_1019",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1019",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_1022",
+    src: "/bodas/Paloma y Alejandro/barraLibre/IMG_1022.jpg",
+    alt: "IMG_1022",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1022",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_1032",
+    src: "/bodas/Paloma y Alejandro/barraLibre/IMG_1032.jpg",
+    alt: "IMG_1032",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1032",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_1132",
+    src: "/bodas/Paloma y Alejandro/barraLibre/IMG_1132.jpg",
+    alt: "IMG_1132",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1132",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_1651",
+    src: "/bodas/Paloma y Alejandro/barraLibre/IMG_1651.jpg",
+    alt: "IMG_1651",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_1651",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0106",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0106.jpg",
+    alt: "_MG_0106",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0106",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0121",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0121.jpg",
+    alt: "_MG_0121",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0121",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0129",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0129.jpg",
+    alt: "_MG_0129",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0129",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0291",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0291.jpg",
+    alt: "_MG_0291",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0291",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0296",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0296.jpg",
+    alt: "_MG_0296",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0296",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0309",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0309.jpg",
+    alt: "_MG_0309",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0309",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0376",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0376.jpg",
+    alt: "_MG_0376",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0376",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0723",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0723.jpg",
+    alt: "_MG_0723",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0723",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0765",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0765.jpg",
+    alt: "_MG_0765",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0765",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0784",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0784.jpg",
+    alt: "_MG_0784",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0784",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0799",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0799.jpg",
+    alt: "_MG_0799",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0799",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "_MG_0802",
+    src: "/bodas/Paloma y Alejandro/barraLibre/_MG_0802.jpg",
+    alt: "_MG_0802",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_0802",
+    subFolder: "Paloma y Alejandro",
+    tags: ["barraLibre"]
+  },
+
+  {
+    id: "IMG_9494",
+    src: "/bodas/Paloma y Alejandro/ceremonia/IMG_9494.JPG",
+    alt: "IMG_9494",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_9494",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "IMG_9641",
+    src: "/bodas/Paloma y Alejandro/ceremonia/IMG_9641.JPG",
+    alt: "IMG_9641",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_9641",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "IMG_9792",
+    src: "/bodas/Paloma y Alejandro/ceremonia/IMG_9792.JPG",
+    alt: "IMG_9792",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_9792",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_MG_8562",
+    src: "/bodas/Paloma y Alejandro/ceremonia/_MG_8562.JPG",
+    alt: "_MG_8562",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_8562",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_MG_8635",
+    src: "/bodas/Paloma y Alejandro/ceremonia/_MG_8635.JPG",
+    alt: "_MG_8635",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_8635",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_MG_8648",
+    src: "/bodas/Paloma y Alejandro/ceremonia/_MG_8648.JPG",
+    alt: "_MG_8648",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_8648",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_MG_8706",
+    src: "/bodas/Paloma y Alejandro/ceremonia/_MG_8706.JPG",
+    alt: "_MG_8706",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_8706",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_MG_8715",
+    src: "/bodas/Paloma y Alejandro/ceremonia/_MG_8715.JPG",
+    alt: "_MG_8715",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_8715",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_MG_8755",
+    src: "/bodas/Paloma y Alejandro/ceremonia/_MG_8755.JPG",
+    alt: "_MG_8755",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_8755",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_MG_8921",
+    src: "/bodas/Paloma y Alejandro/ceremonia/_MG_8921.JPG",
+    alt: "_MG_8921",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_8921",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "_MG_9125",
+    src: "/bodas/Paloma y Alejandro/ceremonia/_MG_9125.JPG",
+    alt: "_MG_9125",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_9125",
+    subFolder: "Paloma y Alejandro",
+    tags: ["ceremonia"]
+  },
+
+  {
+    id: "IMG_0202",
+    src: "/bodas/Paloma y Alejandro/coctel/IMG_0202.JPG",
+    alt: "IMG_0202",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0202",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0318",
+    src: "/bodas/Paloma y Alejandro/coctel/IMG_0318.JPG",
+    alt: "IMG_0318",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0318",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0400",
+    src: "/bodas/Paloma y Alejandro/coctel/IMG_0400.JPG",
+    alt: "IMG_0400",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0400",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0440",
+    src: "/bodas/Paloma y Alejandro/coctel/IMG_0440.JPG",
+    alt: "IMG_0440",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0440",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0450",
+    src: "/bodas/Paloma y Alejandro/coctel/IMG_0450.JPG",
+    alt: "IMG_0450",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0450",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0461",
+    src: "/bodas/Paloma y Alejandro/coctel/IMG_0461.JPG",
+    alt: "IMG_0461",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0461",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0483",
+    src: "/bodas/Paloma y Alejandro/coctel/IMG_0483.JPG",
+    alt: "IMG_0483",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0483",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_0573",
+    src: "/bodas/Paloma y Alejandro/coctel/IMG_0573.JPG",
+    alt: "IMG_0573",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0573",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "_MG_9243",
+    src: "/bodas/Paloma y Alejandro/coctel/_MG_9243.JPG",
+    alt: "_MG_9243",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_9243",
+    subFolder: "Paloma y Alejandro",
+    tags: ["coctel"]
+  },
+
+  {
+    id: "IMG_8846",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8846.JPG",
+    alt: "IMG_8846",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8846",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8864-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8864-Mejorado-NR.JPG",
+    alt: "IMG_8864-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8864-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8872-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8872-Mejorado-NR.JPG",
+    alt: "IMG_8872-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8872-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8878",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8878.JPG",
+    alt: "IMG_8878",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8878",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8883-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8883-Mejorado-NR.JPG",
+    alt: "IMG_8883-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8883-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8897-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8897-Mejorado-NR.JPG",
+    alt: "IMG_8897-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8897-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8917-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8917-Mejorado-NR.JPG",
+    alt: "IMG_8917-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8917-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8957-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8957-Mejorado-NR.JPG",
+    alt: "IMG_8957-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8957-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8973-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8973-Mejorado-NR.JPG",
+    alt: "IMG_8973-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8973-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8975-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8975-Mejorado-NR.JPG",
+    alt: "IMG_8975-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8975-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_8976-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/preparacion/IMG_8976-Mejorado-NR.JPG",
+    alt: "IMG_8976-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_8976-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["preparacion"]
+  },
+
+  {
+    id: "IMG_0007-3",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_0007-3.JPG",
+    alt: "IMG_0007-3",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0007-3",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_0018",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_0018.JPG",
+    alt: "IMG_0018",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0018",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_0041",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_0041.JPG",
+    alt: "IMG_0041",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0041",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_0054",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_0054.JPG",
+    alt: "IMG_0054",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0054",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_0089",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_0089.JPG",
+    alt: "IMG_0089",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0089",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_0128",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_0128.JPG",
+    alt: "IMG_0128",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_0128",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_9871",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_9871.JPG",
+    alt: "IMG_9871",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_9871",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_9892",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_9892.JPG",
+    alt: "IMG_9892",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_9892",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_9908-Editar",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_9908-Editar.JPG",
+    alt: "IMG_9908-Editar",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_9908-Editar",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_9919",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_9919.JPG",
+    alt: "IMG_9919",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_9919",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "IMG_9969",
+    src: "/bodas/Paloma y Alejandro/sesion/IMG_9969.JPG",
+    alt: "IMG_9969",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "IMG_9969",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "_MG_9174-Mejorado-NR",
+    src: "/bodas/Paloma y Alejandro/sesion/_MG_9174-Mejorado-NR.JPG",
+    alt: "_MG_9174-Mejorado-NR",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_9174-Mejorado-NR",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "_MG_9199",
+    src: "/bodas/Paloma y Alejandro/sesion/_MG_9199.JPG",
+    alt: "_MG_9199",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_9199",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  },
+
+  {
+    id: "_MG_9203",
+    src: "/bodas/Paloma y Alejandro/sesion/_MG_9203.JPG",
+    alt: "_MG_9203",
+    dataAiHint: "foto boda",
+    height: 800,
+    category: "Bodas",
+    title: "_MG_9203",
+    subFolder: "Paloma y Alejandro",
+    tags: ["sesion"]
+  }
 ];

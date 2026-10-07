@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
+import FaqSection from '@/components/home/FaqSection';
+import Reveal from '@/components/motion/Reveal';
 
 // --- CONFIGURACIÓN DEL CARRUSEL PRINCIPAL ---
 const heroSlides = [
@@ -23,15 +25,15 @@ const heroSlides = [
   },
   {
     src: '/IMG_8687.jpg',
-    alt: 'Pareja de boda en Andalucia, estilo documental sin poses',
+    alt: 'Pareja de boda en Andalucía, estilo documental sin poses',
     dataAiHint: 'foto boda',
     caption: 'Cobertura en Sevilla y destino',
   },
   {
     src: '/IMG_3153.jpg',
-    alt: 'Fiesta de boda con alma, celebracion en Sevilla',
+    alt: 'Fiesta de boda con alma, celebración en Sevilla',
     dataAiHint: 'foto boda',
-    caption: 'Entrega completa en 2-6 semanas',
+    caption: 'Entrega completa en 3-6 semanas',
   },
 ];
 
@@ -109,11 +111,13 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto">
-              <Link href="/contact">
+              <Link href="/contacto">
                 Hablemos de vuestra boda <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-          
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/60 text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto">
+              <Link href="/precios">Ver nuestros packs</Link>
+            </Button>
           </div>
           <p className="pt-2 text-lg md:text-xl font-serif italic text-primary-foreground/85">
             {heroSlides[activeSlideIndex]?.caption}
@@ -124,7 +128,7 @@ export default function HomePage() {
       {/* About Us Section */}
       <section className="py-24 sm:py-32 bg-background">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1">
+          <Reveal className="order-2 md:order-1">
             <h2 className="text-4xl font-serif font-semibold text-primary mb-6">
               Somos Revelio
             </h2>
@@ -135,17 +139,17 @@ export default function HomePage() {
               Buscamos la luz perfecta, el gesto inadvertido, la lágrima de alegría. Nuestro enfoque es documental y artístico, permitiendo que vuestro día fluya con naturalidad mientras nos encargamos de inmortalizar cada instante.
             </p>
             <p className="text-lg text-foreground/80 leading-relaxed mb-8">
-              Como Revelio Photography, nos mueve una fotografia de bodas con alma que respire verdad. Trabajamos en Sevilla y en toda Andalucia con cercania, para que cada pareja se sienta acompañada y libre de poses forzadas.
+              Como Revelio Photography, nos mueve una fotografía de bodas con alma que respire verdad. Trabajamos en Sevilla y en toda Andalucía con cercanía, para que cada pareja se sienta acompañada y libre de poses forzadas.
             </p>
             <Link
-              href="/about"
+              href="/sobre-nosotros"
               className="inline-flex items-center text-primary border-b border-primary pb-1 hover:text-primary/80 transition-colors uppercase text-sm tracking-widest font-sans font-medium mt-4"
             >
               Conoced nuestra filosofía
               <Heart className="ml-2 w-4 h-4" />
             </Link>
-          </div>
-          <div className="order-1 md:order-2">
+          </Reveal>
+          <Reveal className="order-1 md:order-2" delay={0.12}>
             <Image
               src="/miguel.jpg"
               alt="Retrato del equipo de fotógrafos de bodas"
@@ -153,9 +157,9 @@ export default function HomePage() {
               height={1600}
               className="rounded-lg shadow-xl w-full h-auto"
               data-ai-hint="photographer portrait team"
-              quality={95}
+              quality={80}
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -173,13 +177,14 @@ export default function HomePage() {
         </div>
 
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center mb-14">
+          <Reveal className="max-w-3xl mx-auto text-center mb-14">
             <h2 className="text-4xl font-serif font-semibold text-primary-foreground mb-4">Nuestro proceso, sin complicaciones</h2>
             <p className="text-lg text-primary-foreground/90">
               Queremos que viváis vuestra boda, no que poséis todo el día. Así trabajamos para que todo fluya natural.
-            </p>          </div>
+            </p>
+          </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <Reveal className="grid md:grid-cols-3 gap-8" delay={0.1}>
             <article className="bg-muted/90 p-8 rounded-lg border-l-4 border-primary shadow-xl">
               <p className="text-xs uppercase tracking-widest text-primary mb-3">Paso 1</p>
               <h3 className="text-2xl font-serif text-primary mb-3">Nos conocemos</h3>
@@ -201,19 +206,19 @@ export default function HomePage() {
             <article className="bg-muted/90 p-8 rounded-lg border-l-4 border-primary shadow-xl">
               <p className="text-xs uppercase tracking-widest text-primary mb-3">Paso 3</p>
               <h3 className="text-2xl font-serif text-primary mb-3">Entregamos recuerdos</h3>
-              <p className="font-serif italic text-lg text-foreground leading-relaxed">Recibís un adelanto en la primera semana y la galería final editada en 3-6 semanas.</p>
+              <p className="font-serif italic text-lg text-foreground leading-relaxed">Recibís cinco fotos de adelanto en 48 horas y la <Link href="/galeria" className="underline decoration-primary/40 underline-offset-2 hover:decoration-primary">galería final editada</Link> en 3-6 semanas.</p>
               <div className="mt-6 flex items-center gap-2 text-primary font-sans text-xs uppercase tracking-widest font-bold">
                 <Images className="w-4 h-4" />
                 <span>Galería final cuidada</span>
               </div>
             </article>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Wedding Stories Section */}
       <section className="py-24 sm:py-32 bg-muted">
-        <div className="container mx-auto px-4 text-center">
+        <Reveal className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-serif font-semibold text-primary mb-4">
             Historias de Boda
           </h2>
@@ -226,7 +231,7 @@ export default function HomePage() {
               {
                 img: "carrusel1.jpg",
                 couple: "Helen & Dani",
-                alt: "Boda de Helen y Dani en Sevilla, fotografia natural en verano",
+                alt: "Boda de Helen y Dani en Sevilla, fotografía natural en verano",
                 description: "En pleno verano sevillano, Helen y Dani nos hicieron disfrutar con su complicidad y esa manera tan suya de mirarse. Su boda fue íntima, con un aire mediterráneo y llena de momentos que se vivieron a lo grande."
               },
               {
@@ -238,7 +243,7 @@ export default function HomePage() {
               {
                 img: "_DMA1102.jpg",
                 couple: "Florentino & Amor",
-                alt: "Celebracion de Florentino y Amor, fotografia con alma en familia",
+                alt: "Celebración de Florentino y Amor, fotografía con alma en familia",
                 description: "Florentino y Amor celebraron 50 años juntos con la misma ilusión de siempre. Fue un día entrañable, lleno de ternura y de momentos que reflejaban todo lo que han construido. Entre risas, miradas cómplices y la compañía de hijos y nietos, festejaron medio siglo de amor de verdad."
               }
             ].map((story, index) => (
@@ -253,8 +258,6 @@ export default function HomePage() {
                     data-ai-hint="wedding story"
                     quality={80}
                     loading="lazy"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg=="
                   />
                 </div>
                 <h3 className="text-2xl font-serif font-medium text-primary mb-2">
@@ -265,14 +268,17 @@ export default function HomePage() {
             ))}
           </div>
           <Link
-            href="/gallery"
+            href="/galeria"
             className="inline-flex items-center text-primary border-b border-primary pb-1 hover:text-primary/80 transition-colors uppercase text-sm tracking-widest font-sans font-medium mt-12"
           >
-            Explorar mas historias
+            Ver reportajes completos de bodas en Sevilla
             <ArrowRight className="ml-2 w-4 h-4" />
           </Link>
-        </div>
+        </Reveal>
       </section>
+
+      {/* Preguntas frecuentes */}
+      <FaqSection />
 
     </div>
   );

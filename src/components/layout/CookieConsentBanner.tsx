@@ -46,7 +46,7 @@ export default function CookieConsentBanner() {
             <Cookie className="h-5 w-5 mr-3 mt-0.5 shrink-0 text-primary" />
             <p>
               Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Al continuar navegando, aceptas nuestro uso de cookies. Puedes obtener más información en nuestra{' '}
-              <Link href="/cookie-policy" className="underline hover:text-primary">
+              <Link href="/politica-de-cookies" className="underline hover:text-primary">
                 Política de Cookies
               </Link>.
             </p>

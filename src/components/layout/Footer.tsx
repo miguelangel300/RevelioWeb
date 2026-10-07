@@ -5,11 +5,10 @@ import { cn } from '@/lib/utils';
 const Logo = ({ className }: { className?: string }) => (
   <Image
     src="/logoRevelio completo sin fondo.png"
-    alt="Logo Revelio"
-    width={160}
+    alt=""
+    width={163}
     height={53}
-    className={cn("h-14 w-auto", className)}
-    priority
+    className={cn("h-6 md:h-8 w-auto", className)}
   />
 );
 
@@ -59,9 +58,13 @@ export default function Footer() {
         <div className="text-xs text-muted-foreground text-center md:text-right">
           <p>© {currentYear} Revelio Photography. Todos los derechos reservados.</p>
           <div className="mt-2 space-x-4">
-            <Link href="/contact" className="hover:underline hover:text-primary transition-colors">Agenda vuestra fecha</Link>
-            <Link href="/privacy-policy" className="hover:underline hover:text-primary transition-colors">Política de privacidad</Link>
-            <Link href="/cookie-policy" className="hover:underline hover:text-primary transition-colors">Cookies</Link>
+            <Link href="/contacto" className="hover:underline hover:text-primary transition-colors">Agenda vuestra fecha</Link>
+            <Link href="/precios" className="hover:underline hover:text-primary transition-colors">Packs</Link>
+            <Link href="/colaboradores" className="hover:underline hover:text-primary transition-colors">Colaboradores</Link>
+            <Link href="/politica-de-privacidad" className="hover:underline hover:text-primary transition-colors">Política de privacidad</Link>
+            <Link href="/politica-de-cookies" className="hover:underline hover:text-primary transition-colors">Cookies</Link>
+            <Link href="/aviso-legal" className="hover:underline hover:text-primary transition-colors">Aviso legal</Link>
+            <Link href="/accesibilidad" className="hover:underline hover:text-primary transition-colors">Accesibilidad</Link>
           </div>
         </div>
 
