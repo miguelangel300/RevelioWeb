@@ -8,8 +8,8 @@ const BookingInquirySchema = z.object({
   email: z.string().email({ message: "Por favor, introduce una dirección de correo electrónico válida." }),
   phone: z.string().optional(),
   weddingDate: z.string().min(1, { message: "Por favor, selecciona una fecha para la boda." }),
-  venue: z.string().min(2, { message: "El lugar debe tener al menos 2 caracteres." }),
-  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }).max(1000, { message: "El mensaje no puede exceder los 1000 caracteres." }),
+  venue: z.string().min(2, { message: "El lugar debe tener al menos 2 caracteres." }).optional(),
+  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }).max(1000, { message: "El mensaje no puede exceder los 1000 caracteres." }).optional(),
   privacyPolicy: z.boolean().refine(val => val === true, {
     message: "Debes aceptar la política de privacidad para continuar."
   })
@@ -28,7 +28,7 @@ export async function handleBookingInquiry(data: BookingInquiryData) {
   }
 
   console.log('Iniciando envío de email...');
-  
+
   // Verificar que tenemos la contraseña (aceptamos SMTP_PASS o GMAIL_APP_PASSWORD)
   const availablePassword = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD;
   if (!availablePassword) {
@@ -38,7 +38,7 @@ export async function handleBookingInquiry(data: BookingInquiryData) {
       message: "Error de configuración del servidor: falta la contraseña SMTP",
     };
   }
-  
+
   // Configuración del transporte SMTP configurable.
   // Preferimos usar variables de entorno del hosting (p.ej. PiensaSolutions):
   // SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, MAIL_FROM
@@ -93,11 +93,11 @@ Nombre: ${clientName}
 Email: ${email}
 Teléfono: ${phone || 'No proporcionado'}
 Fecha de la boda: ${weddingDate}
-Lugar: ${venue}
+Lugar: ${venue || 'No proporcionado'}
 
 MENSAJE DEL CLIENTE:
 -----------------
-${userMessage}
+${userMessage || 'No especificado'}
 
 -------------------
 Enviado desde el formulario de contacto de reveliophotography.es
@@ -129,16 +129,16 @@ Enviado desde el formulario de contacto de reveliophotography.es
 
   try {
     console.log('Iniciando verificación de conexión...');
-    
+
     // Verificar la conexión primero
     await transporter.verify();
     console.log('Conexión SMTP verificada correctamente');
-    
+
     console.log('Preparando para enviar email con opciones:', {
       ...mailOptions,
       pass: '***' // Ocultamos la contraseña en los logs
     });
-    
+
     // Intentar enviar el email
     const info = await transporter.sendMail(mailOptions);
     console.log('Email enviado exitosamente');
@@ -165,7 +165,7 @@ Enviado desde el formulario de contacto de reveliophotography.es
     } catch (err) {
       console.error('Error al procesar accepted/rejected:', err);
     }
-    
+
     return {
       success: true,
       message: "¡Gracias por vuestro mensaje! Me pondré en contacto con vosotros muy pronto.",
@@ -183,15 +183,15 @@ Enviado desde el formulario de contacto de reveliophotography.es
     console.error('Código de error:', smtpError.code);
     console.error('Comando:', smtpError.command);
     console.error('Respuesta del servidor:', smtpError.response);
-    
+
     if (smtpError.code === 'EAUTH') {
       console.error('Error de autenticación - Verifica las credenciales');
     } else if (smtpError.code === 'ESOCKET') {
       console.error('Error de conexión - Verifica la configuración del servidor SMTP');
     }
-    
+
     console.error('Stack trace:', errorDetails.stack);
-    
+
     return {
       success: false,
       message: `Error al enviar el mensaje: ${errorDetails.message || 'Error desconocido'}. Por favor, inténtalo de nuevo más tarde.`,

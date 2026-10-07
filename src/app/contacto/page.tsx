@@ -6,6 +6,7 @@ import { siteConfig } from '@/lib/site';
 import Reveal from '@/components/motion/Reveal';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { contactFaqs } from '@/data/faq';
+import WhatsAppQuestionButton from '@/components/layout/WhatsAppQuestionButton';
 
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 const contactInfo = {
-  displayPhone: "698480039 // 652408441 // 601370069",
+  displayPhone: "Alejandro Recepción: 698480039 Miguel Ángel Fotografo: 652408441  Elia Fotografa: 601370069",
   fullPhone: "+34698480039",
   email: "info@reveliophotography.es",
   whatsappNumber: "34698480039",
@@ -131,6 +132,8 @@ export default function ContactPage() {
                 </p>
               </div>
             ))}
+            <WhatsAppQuestionButton phoneNumber={contactInfo.whatsappNumber} customMessage={contactInfo.whatsappMessage} />
+
           </div>
         </Reveal>
       </div>
