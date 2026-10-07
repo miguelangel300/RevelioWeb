@@ -21,6 +21,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { CalendarIcon, ArrowRight } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
+import { es } from "date-fns/locale";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { handleBookingInquiry, BookingInquiryData } from "@/app/actions";
@@ -30,8 +31,8 @@ const BookingInquirySchema = z.object({
   email: z.string().email({ message: "Por favor, introduce una dirección de correo electrónico válida." }),
   phone: z.string().min(7, { message: "Introduce un número de teléfono válido." }),
   weddingDate: z.date({ required_error: "La fecha de la boda es obligatoria." }),
-  venue: z.string().min(2, { message: "El lugar debe tener al menos 2 caracteres." }),
-  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }).max(1000, { message: "El mensaje no puede exceder los 1000 caracteres." }),
+  venue: z.string().min(2, { message: "El lugar debe tener al menos 2 caracteres." }).optional(),
+  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }).max(1000, { message: "El mensaje no puede exceder los 1000 caracteres." }).optional(),
   privacyPolicy: z.boolean().refine(val => val === true, {
     message: "Debes aceptar la política de privacidad para continuar."
   })
@@ -39,7 +40,7 @@ const BookingInquirySchema = z.object({
 
 type BookingFormValues = z.infer<typeof BookingInquirySchema>;
 
-const inputClassName = "w-full border-0 border-b border-border bg-transparent py-3 px-0 text-foreground focus-visible:ring-0 focus-visible:border-primary focus-visible:border-b-2 placeholder:text-muted-foreground text-lg transition-colors rounded-none shadow-none h-auto";
+const inputClassName = "w-full border-0 border-b border-border bg-transparent py-3 px-0 text-foreground focus-visible:ring-0 focus-visible:border-primary focus-visible:border-b-2 placeholder:text-muted-foreground/30 text-lg transition-colors rounded-none shadow-none h-auto";
 const labelClassName = "block font-bold text-muted-foreground mb-1 uppercase tracking-widest text-xs";
 
 export default function BookingForm() {
@@ -136,14 +137,14 @@ export default function BookingForm() {
                   <PopoverTrigger asChild>
                     <FormControl>
                       <Button
-                        variant={"outline"}
+                        variant={"ghost"}
                         className={cn(
                           inputClassName,
-                          "flex justify-between items-center text-left font-normal bg-transparent hover:bg-transparent px-0",
-                          !field.value && "text-muted-foreground"
+                          "flex justify-between items-center text-left font-normal text-sm h-auto py-3 px-0 bg-transparent hover:bg-transparent rounded-none border-0 border-b border-border focus-visible:ring-0 focus-visible:border-primary",
+                          !field.value && "text-muted-foreground/30"
                         )}
                       >
-                        {field.value ? format(field.value, "PPP") : <span>Día / Mes / Año</span>}
+                        {field.value ? format(field.value, "PPP", { locale: es }) : <span>Día / Mes / Año</span>}
                         <CalendarIcon className="h-4 w-4 opacity-50" />
                       </Button>
                     </FormControl>
@@ -155,6 +156,7 @@ export default function BookingForm() {
                       onSelect={field.onChange}
                       disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
                       initialFocus
+                      locale={es}
                     />
                   </PopoverContent>
                 </Popover>
@@ -200,7 +202,7 @@ export default function BookingForm() {
           control={form.control}
           name="privacyPolicy"
           render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 p-4 bg-muted/20 border border-border rounded-sm">
+            <FormItem className="flex flex-row items-start space-x-3 space-y-0 p-4 bg-muted/30 border border-border rounded-sm">
               <FormControl>
                 <Checkbox
                   checked={field.value}
