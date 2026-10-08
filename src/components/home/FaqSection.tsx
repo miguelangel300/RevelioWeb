@@ -11,7 +11,7 @@ import { getFaqSchema } from '@/lib/schema';
 
 export default function FaqSection() {
   return (
-    <section className="py-24 sm:py-32 bg-background">
+    <section className="py-6 sm:py- bg-background">
       <JsonLd data={getFaqSchema(faqs)} />
       <Reveal className="container mx-auto px-4 max-w-3xl">
         <h2 className="text-4xl font-serif font-semibold text-primary mb-4 text-center">
@@ -33,6 +33,7 @@ export default function FaqSection() {
           ))}
         </Accordion>
       </Reveal>
+
     </section>
   );
 }

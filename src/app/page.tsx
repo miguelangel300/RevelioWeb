@@ -14,6 +14,7 @@ import Autoplay from "embla-carousel-autoplay";
 import * as React from "react";
 import FaqSection from '@/components/home/FaqSection';
 import Reveal from '@/components/motion/Reveal';
+import WhatsAppQuestionButton from '@/components/layout/WhatsAppQuestionButton';
 
 // --- CONFIGURACIÓN DEL CARRUSEL PRINCIPAL ---
 const heroSlides = [
@@ -110,9 +111,11 @@ export default function HomePage() {
             Contamos vuestra historia a través de imágenes que perduran.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="hover:bg-transparent  hover:text-primary-foreground bg-primary-foreground text-primary w-full sm:w-auto">
+            <Button asChild size="lg" variant="outline" className="hover:bg-transparent hover:text-primary-foreground bg-primary-foreground text-primary w-full sm:w-auto">
               <Link href="/contacto">
-                Hablemos de vuestra boda <ArrowRight className="ml-2 h-5 w-5" />
+                <span className="flex items-center">
+                  Hablemos de vuestra boda <ArrowRight className="ml-2 h-5 w-5" />
+                </span>
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/60 text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto">
@@ -213,6 +216,14 @@ export default function HomePage() {
               </div>
             </article>
           </Reveal>
+          {/* Botón centrado debajo del grid */}
+          <Reveal delay={0.2} className="mt-12 flex justify-center">
+            <Button asChild size="lg" className="hover:bg-primary-foreground hover:text-primary px-8 py-6 rounded-md shadow-xl transition-all">
+              <Link href="/contacto" className="text-white font-sans text-xs uppercase tracking-widest font-bold">
+                ¿Empezamos?
+              </Link>
+            </Button>
+          </Reveal>
         </div>
       </section>
 
@@ -279,6 +290,13 @@ export default function HomePage() {
 
       {/* Preguntas frecuentes */}
       <FaqSection />
+
+      {/* Botón de WhatsApp debajo de FAQ */}
+      <section className="pb-12 flex justify-center text-center">
+        <Reveal delay={0.2}>
+          <WhatsAppQuestionButton />
+        </Reveal>
+      </section>
 
     </div>
   );
