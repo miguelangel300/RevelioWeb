@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const navItems = [
   { href: '/', label: 'Inicio' },
- { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
+  { href: '/sobre-nosotros', label: 'Sobre Nosotros' },
   { href: '/galeria', label: 'Galería' },
   { href: '/precios', label: 'Packs' },
   { href: '/contacto', label: 'Contacto' },
@@ -85,7 +85,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "font-bold text-sm transition-colors hover:text-primary",
+                  "font-bold text-sm transition-colors hover:text-primary-foreground/60",
                   linkColorClasses,
                   pathname === item.href ? 'border-b-2 border-current hover:text-primary' : ''
                 )}
