@@ -27,13 +27,13 @@ const heroSlides = [
     src: '/IMG_8687.jpg',
     alt: 'Pareja de boda en Andalucía, estilo documental sin poses',
     dataAiHint: 'foto boda',
-    caption: 'Cobertura en Sevilla y destino',
+    caption: 'Cobertura en Sevilla y el resto de Andalucia',
   },
   {
     src: '/IMG_3153.jpg',
     alt: 'Fiesta de boda con alma, celebración en Sevilla',
     dataAiHint: 'foto boda',
-    caption: 'Entrega completa en 3-6 semanas',
+    caption: 'Entrega completa en menos de 16 semanas',
   },
 ];
 
@@ -110,7 +110,7 @@ export default function HomePage() {
             Contamos vuestra historia a través de imágenes que perduran.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary w-full sm:w-auto">
+            <Button asChild size="lg" variant="outline" className="hover:bg-transparent  hover:text-primary-foreground bg-primary-foreground text-primary w-full sm:w-auto">
               <Link href="/contacto">
                 Hablemos de vuestra boda <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
