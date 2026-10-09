@@ -116,6 +116,11 @@ export default function PreciosPage() {
             {extras.map((extra) => (
               <li key={extra.name} className="py-4">
                 <span className="text-foreground/80">
+                  {extra.esColaborador ? (
+                    <span className="text-orange-400 font-bold" aria-hidden="true">
+                      *
+                    </span>
+                  ) : null}{' '}
                   {extra.name}
                   {extra.nota ? (
                     <span className="text-muted-foreground text-sm"> · {extra.nota}</span>
@@ -126,7 +131,7 @@ export default function PreciosPage() {
           </ul>
 
           <p className="text-sm text-muted-foreground mt-8 leading-relaxed">
-            El fotomatón y el videobooth los ponen{' '}
+            <span className="text-orange-400 font-bold">*</span> El fotomatón y el videobooth los ponen{' '}
             <Link href="/colaboradores" className="underline decoration-primary/40 underline-offset-2 hover:decoration-primary">
               dos de nuestros colaboradores
             </Link>
