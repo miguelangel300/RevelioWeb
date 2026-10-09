@@ -18,7 +18,7 @@ const WhatsAppIcon = () => (
 
 interface WhatsAppQuestionButtonProps {
     buttonText?: string;
-    title?: string;
+    title?: string | null;
     phoneNumber?: string;
     customMessage?: string;
 }
@@ -33,9 +33,11 @@ export default function WhatsAppQuestionButton({
 
     return (
         <div className="flex flex-col items-start gap-3 pt-4">
-            <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                {title}
-            </p>
+            {title ? (
+                <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                    {title}
+                </p>
+            ) : null}
             <Link
                 href={whatsappLink}
                 target="_blank"
