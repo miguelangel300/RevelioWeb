@@ -87,7 +87,7 @@ export default function Header() {
                 className={cn(
                   "font-bold text-sm transition-colors hover:text-primary-foreground/60",
                   linkColorClasses,
-                  pathname === item.href ? 'border-b-2 border-current hover:text-primary' : ''
+                  pathname === item.href ? 'border-b-2 border-current hover:text-primary-foreground/50' : ''
                 )}
               >
                 {item.label}
@@ -118,7 +118,7 @@ export default function Header() {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={cn(
-                  "block px-3 py-2 rounded-md text-base font-medium text-primary-foreground hover:bg-primary-foreground/10",
+                  "block px-3 py-2 rounded-md text-base font-medium text-primary-foreground hover:bg-primary-foreground/60",
                   pathname === item.href ? 'bg-primary-foreground/20' : ''
                 )}
               >

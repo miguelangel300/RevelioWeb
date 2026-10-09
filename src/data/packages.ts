@@ -13,6 +13,8 @@ export type Paquete = {
 
 export type Extra = {
   name: string;
+  /** Indica que el servicio lo prestan colaboradores externos. */
+  esColaborador?: boolean;
   /** null cuando hay que consultarlo. */
   price: number | null;
   nota?: string;
@@ -64,9 +66,9 @@ export const paquetes: Paquete[] = [
 
 export const extras: Extra[] = [
   { name: 'Sesión de preboda o postboda', price: 150, nota: 'Solo fotógrafo' },
-  { name: 'Fotomatón, 2 horas', price: 500 },
-  { name: 'Videobooth, 2 horas', price: 350 },
-  { name: 'Fotomatón y videobooth, 2 horas', price: 700 },
+  { name: 'Fotomatón, 2 horas', price: 500, esColaborador: true },
+  { name: 'Videobooth, 2 horas', price: 350, esColaborador: true },
+  { name: 'Fotomatón y videobooth, 2 horas', price: 700, esColaborador: true },
   { name: 'Hora extra por fotógrafo', price: 100 },
   { name: 'Álbum impreso personalizado', price: null, nota: 'Consultadnos' },
 ];
