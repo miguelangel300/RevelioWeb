@@ -5,6 +5,7 @@ import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import Reveal from '@/components/motion/Reveal';
 import { cobertura, extras, paquetes, vigenciaGaleria } from '@/data/packages';
 import { siteConfig } from '@/lib/site';
+import WhatsAppQuestionButton from '@/components/layout/WhatsAppQuestionButton';
 
 const title = 'Packs de boda | Revelio Photography';
 const description =
@@ -94,6 +95,11 @@ export default function PreciosPage() {
                       <dd className="text-foreground/80">{paquete.entrega}</dd>
                     </div>
                   </dl>
+                  <WhatsAppQuestionButton
+                    buttonText="Consultar"
+                    title={null}
+                    customMessage={`¡Hola! Me interesa el paquete "${paquete.name}" para mi boda. ¿Podéis darme más información?`}
+                  />
                 </Reveal>
               </li>
             ))}
