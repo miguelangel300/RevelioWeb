@@ -59,15 +59,26 @@ export default function CollaboratorsPage() {
                   delay={index * 0.08}
                   className="h-full bg-muted/90 rounded-lg border-l-4 border-primary shadow-xl overflow-hidden flex flex-col"
                 >
-                  <div className="relative aspect-[4/3] bg-background flex items-center justify-center">
+                  <div className="relative aspect-[4/3] bg-background flex items-center justify-center overflow-hidden">
                     {collaborator.logo ? (
-                      <Image
-                        src={collaborator.logo}
-                        alt={`Logo de ${collaborator.name}`}
-                        fill
-                        sizes="(min-width: 768px) 50vw, 100vw"
-                        className="object-contain p-8"
-                      />
+                      <>
+                        <Image
+                          src={collaborator.logo}
+                          alt=""
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          aria-hidden="true"
+                          className="object-cover scale-110 blur-xl opacity-35"
+                        />
+                        <div className="absolute inset-0 bg-background/35" aria-hidden="true" />
+                        <Image
+                          src={collaborator.logo}
+                          alt={`Logo de ${collaborator.name}`}
+                          fill
+                          sizes="(min-width: 768px) 50vw, 100vw"
+                          className="object-contain"
+                        />
+                      </>
                     ) : (
                       <span className="font-script text-4xl text-primary px-6 text-center">
                         {collaborator.name}
@@ -76,10 +87,9 @@ export default function CollaboratorsPage() {
                   </div>
 
                   <div className="p-8 flex flex-col flex-grow">
-                    <p className="text-xs uppercase tracking-widest text-primary mb-2">
-                      {collaborator.category}
-                    </p>
-                    <h2 className="text-2xl font-serif text-primary mb-1">{collaborator.name}</h2>
+                    <h2 className="text-2xl font-serif text-primary mb-1">
+                      {collaborator.name}
+                    </h2>
                     <p className="text-sm text-muted-foreground mb-4">{collaborator.city}</p>
                     <p className="text-foreground/80 leading-relaxed mb-6 flex-grow">
                       {collaborator.description}
