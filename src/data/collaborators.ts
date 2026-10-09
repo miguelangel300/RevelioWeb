@@ -28,6 +28,7 @@ export const collaborators: Collaborator[] = [
       'Oficia bodas simbólicas hechas a medida, en español, inglés o francés. Escribe vuestra historia de amor, coordina el día y deja la ceremonia en 25-40 minutos. También hace elopements y renovaciones de votos.',
     website: 'https://www.maestradeceremonias-sevilla.com',
     instagram: 'https://www.instagram.com/maestradeceremonias.sevilla/',
+    logo: '/colaboradores/clara-martin.jpg',
   },
   {
     slug: 'jumpinggo',
@@ -37,6 +38,7 @@ export const collaborators: Collaborator[] = [
     description:
       'Fotomatón y videobooth para bodas en Sevilla. Son a quienes llamamos cuando una pareja nos pregunta por fotomatón aquí.',
     instagram: 'https://www.instagram.com/jumpinggo.es/',
+    logo: '/colaboradores/jumpinggo.jpg',
   },
   {
     slug: 'good-party',
@@ -46,6 +48,7 @@ export const collaborators: Collaborator[] = [
     description:
       'Animación de bodas y hora loca. Los que entran cuando la fiesta necesita un empujón y hay que levantar a todo el mundo de la silla.',
     instagram: 'https://www.instagram.com/goodparty.es/',
+    logo: '/colaboradores/good-party.jpg',
   },
   {
     slug: 'catering-alboroto',
@@ -54,6 +57,7 @@ export const collaborators: Collaborator[] = [
     city: 'Sevilla',
     description: 'Catering de bodas y eventos en Sevilla.',
     instagram: 'https://www.instagram.com/cateringalborotosevilla/',
+    logo: '/colaboradores/catering-alboroto.jpg',
   },
   {
     slug: 'vive-el-momento',
@@ -65,5 +69,15 @@ export const collaborators: Collaborator[] = [
     website: 'https://viveelmomento.es/',
     instagram: 'https://www.instagram.com/viveelmomento_fotomaton/',
     logo: '/colaboradores/vive-el-momento.jpg',
+  },
+  {
+    slug: 'amoryfloresweddings',
+    name: 'amoryfloresweddings',
+    category: 'Wedding Planner',
+    city: 'Provincia de Sevilla y Andalucía',
+    description:
+      'Wedding Planner y organizadora de bodas en Sevilla y Andalucía. Se encarga de la planificación, coordinación y diseño de bodas, asegurando que cada detalle sea perfecto para el gran día.',
+    instagram: 'https://www.instagram.com/amoryfloresweddings/',
+    logo: '/colaboradores/amoryfloresweddings.jpg',
   },
 ];
