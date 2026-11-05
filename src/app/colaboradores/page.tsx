@@ -76,7 +76,7 @@ export default function CollaboratorsPage() {
                           alt={`Logo de ${collaborator.name}`}
                           fill
                           sizes="(min-width: 768px) 50vw, 100vw"
-                          className="object-contain"
+                          className="object-contain p-6"
                         />
                       </>
                     ) : (

@@ -38,7 +38,7 @@ export const collaborators: Collaborator[] = [
     description:
       'Fotomatón y videobooth para bodas en Sevilla. Son a quienes llamamos cuando una pareja nos pregunta por fotomatón aquí.',
     instagram: 'https://www.instagram.com/jumpinggo.es/',
-    logo: '/colaboradores/jumpinggo.jpg',
+    logo: '/colaboradores/jumpinggo.jpg.png',
   },
   {
     slug: 'good-party',
@@ -48,7 +48,7 @@ export const collaborators: Collaborator[] = [
     description:
       'Animación de bodas y hora loca. Los que entran cuando la fiesta necesita un empujón y hay que levantar a todo el mundo de la silla.',
     instagram: 'https://www.instagram.com/goodparty.es/',
-    logo: '/colaboradores/good-party.jpg',
+    logo: '/colaboradores/good-party.png',
   },
   {
     slug: 'catering-alboroto',

@@ -49,7 +49,25 @@ Todas las imágenes de marcador de posición (`https://placehold.co/...`) incluy
 ### 5. Optimización de Imágenes para Web (Flujo de Trabajo)
 
 Para mantener la página web rápida y posicionar bien en Google, las fotos pesadas de las bodas (que suelen pesar más de 10 MB) se comprimen automáticamente usando un script.
+**Cómo subir nuevas MINIATURAS   :**
+Cambiar la miniatura de una foto en la galería es tan sencillo como reemplazar el archivo en la carpeta `/public` con el mismo nombre.
+No se ve el cambio inmediatamente en la web, y esto es normal.
+Porque el archivo cambió, pero la URL sigue siendo exactamente la misma:
 
+La galería sí está detectando el archivo correcto y el servidor devuelve la imagen nueva. El navegador y el optimizador de imágenes de Next.js pueden conservar la versión anterior en caché.
+
+Prueba, en este orden:
+
+Recarga forzada: Ctrl + F5.
+Abre DevTools → Network → activa Disable cache y recarga.
+Reinicia el servidor:
+Si todavía aparece la antigua, borra la caché generada de Next y reinicia:
+La causa no es que la API esté usando otra miniatura: actualmente devuelve correctamente:
+''' 
+Remove-Item -Recurse -Force .next
+npm run dev 
+'''
+Para evitarlo definitivamente en futuros cambios, se puede añadir una versión a la URL de la miniatura, por ejemplo ?v=2, o configurar una estrategia de invalidación de caché.
 **Cómo subir nuevas fotos:**
 
 1. Copia tus fotos originales pesadas (JPG) dentro de la carpeta `/raw_images` (en la raíz del proyecto, fuera de `public`).

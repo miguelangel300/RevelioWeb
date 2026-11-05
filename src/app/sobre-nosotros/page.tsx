@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { PawPrint, Quote } from 'lucide-react';
+import { Camera, HeartHandshake, PawPrint, Quote, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/site';
 import Reveal from '@/components/motion/Reveal';
@@ -68,6 +68,63 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Cómo trabajamos Section */}
+      <section id="como-trabajamos" className="py-24 bg-muted/50 transition-colors duration-300">
+        <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="font-script font-semibold text-5xl text-primary mb-4">
+              Cómo trabajamos
+            </h2>
+            <p className="font-serif text-xl text-muted-foreground font-light">
+              Os acompañamos para que podáis vivir vuestra boda con libertad, mientras nosotros
+              contamos vuestra historia tal y como sucede.
+            </p>
+          </div>
+
+          <ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 list-none p-0 m-0">
+            {[
+              {
+                icon: HeartHandshake,
+                title: 'Os conocemos',
+                description:
+                  'Hablamos de vuestra historia, de lo que os importa y de cómo imagináis vuestro día.',
+              },
+              {
+                icon: Sparkles,
+                title: 'Lo preparamos juntos',
+                description:
+                  'Resolvemos dudas y organizamos la cobertura para que todo encaje sin añadir estrés.',
+              },
+              {
+                icon: Camera,
+                title: 'Observamos y capturamos',
+                description:
+                  'Nos integramos con discreción para guardar las emociones, los gestos y la energía real de la celebración.',
+              },
+              {
+                icon: Quote,
+                title: 'Os entregamos recuerdos',
+                description:
+                  'Seleccionamos y editamos cada imagen con una mirada natural y artística, para que podáis volver a ese día.',
+              },
+            ].map(({ icon: Icon, title: stepTitle, description }, index) => (
+              <li key={stepTitle} className="h-full">
+                <div className="h-full bg-background rounded-lg border-t-4 border-primary shadow-lg p-8">
+                  <div className="flex items-center gap-3 mb-5 text-primary">
+                    <span className="flex items-center justify-center w-9 h-9 rounded-full bg-primary text-primary-foreground font-serif font-bold">
+                      {index + 1}
+                    </span>
+                    <Icon className="w-6 h-6" aria-hidden="true" />
+                  </div>
+                  <h3 className="font-serif text-2xl text-primary mb-3">{stepTitle}</h3>
+                  <p className="text-foreground/80 leading-relaxed">{description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </section>
 
       {/* Mascotas Section */}
