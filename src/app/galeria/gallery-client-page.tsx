@@ -107,7 +107,6 @@ const WeddingCard = ({ wedding, onClick }: { wedding: WeddingInfo, onClick: () =
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
         <h3 className="text-2xl font-serif font-semibold mb-1">{wedding.name}</h3>
-        <p className="text-sm text-white/70">{wedding.imageCount} fotos · {wedding.tags.length} categorías</p>
       </div>
     </motion.div>
   );
